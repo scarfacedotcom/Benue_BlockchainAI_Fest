@@ -44,10 +44,12 @@ module.exports = (sequelize, DataTypes) => {
       phone: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       whatsapp: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       industry: {
         type: DataTypes.STRING,

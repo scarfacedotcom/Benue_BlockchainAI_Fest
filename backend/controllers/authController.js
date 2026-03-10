@@ -33,11 +33,27 @@ async function register(req, res) {
 
   try {
    
-    const existing = await User.findOne({ where: { corporateEmail } });
-    if (existing) {
+    const existingEmail = await User.findOne({ where: { corporateEmail } });
+    if (existingEmail) {
       return res.status(409).json({
         success: false,
         message: 'This corporate email is already registered.',
+      });
+    }
+
+    const existingPhone = await User.findOne({ where: { phone } });
+    if (existingPhone) {
+      return res.status(409).json({
+        success: false,
+        message: 'This phone number is already registered.',
+      });
+    }
+
+    const existingWhatsapp = await User.findOne({ where: { whatsapp } });
+    if (existingWhatsapp) {
+      return res.status(409).json({
+        success: false,
+        message: 'This WhatsApp number is already registered.',
       });
     }
 

@@ -32,4 +32,28 @@ const adminLoginSchema = Joi.object({
   password: Joi.string().min(6).required(),
 });
 
-module.exports = { registerSchema, adminLoginSchema };
+const hackathonRegisterSchema = Joi.object({
+  firstName: Joi.string().trim().min(1).max(100).required(),
+  lastName: Joi.string().trim().min(1).max(100).required(),
+  email: Joi.string().trim().email().required(),
+  githubPortfolio: Joi.string().trim().uri().optional().allow('', null),
+  projectDescription: Joi.string().trim().min(10).max(2000).required(),
+});
+
+const productShowcaseSchema = Joi.object({
+  firstName: Joi.string().trim().min(1).max(100).required(),
+  lastName: Joi.string().trim().min(1).max(100).required(),
+  email: Joi.string().trim().email().required(),
+  productLink: Joi.string().trim().uri().optional().allow('', null),
+  projectDescription: Joi.string().trim().min(10).max(2000).required(),
+});
+
+const speakerApplicationSchema = Joi.object({
+  firstName: Joi.string().trim().min(1).max(100).required(),
+  lastName: Joi.string().trim().min(1).max(100).required(),
+  email: Joi.string().trim().email().required(),
+  linkedinLink: Joi.string().trim().uri().optional().allow('', null),
+  expertiseDescription: Joi.string().trim().min(10).max(2000).required(),
+});
+
+module.exports = { registerSchema, adminLoginSchema, hackathonRegisterSchema, productShowcaseSchema, speakerApplicationSchema };
