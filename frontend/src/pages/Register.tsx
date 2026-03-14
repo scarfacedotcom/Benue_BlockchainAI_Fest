@@ -385,6 +385,11 @@ export default function Register() {
                     </Reveal>
 
                     <Reveal delay={150}>
+                        {error && (
+                            <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-center animate-in fade-in slide-in-from-top-2">
+                                {error}
+                            </div>
+                        )}
                         {status === 'success' ? (
                             <div className="bg-white rounded-4xl p-12 text-center shadow-sm border border-gray-100 max-w-xl mx-auto">
                                 <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
@@ -392,7 +397,7 @@ export default function Register() {
                                 </div>
                                 <h3 className="text-3xl font-medium text-gray-900 mb-4 tracking-tight">You're on the list!</h3>
                                 <p className="text-gray-500 text-lg mb-10 font-light leading-relaxed">Check your email for your ticket confirmation and further details about the event.</p>
-                                <button onClick={() => setStatus('')} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
+                                <button onClick={() => { setStatus(''); setFormData(initialFormData); window.scrollTo(0, 0); }} className="bg-white text-gray-900 border border-gray-200 hover:border-primary hover:text-primary font-medium py-3 px-8 rounded-xl transition-all duration-300">
                                     Register Another
                                 </button>
                             </div>

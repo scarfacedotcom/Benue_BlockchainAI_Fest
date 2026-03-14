@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Register from './pages/Register'
 import Apply from './pages/Apply'
@@ -9,10 +10,12 @@ import AdminRegistrations from './pages/admin/AdminRegistrations'
 import AdminHackathon from './pages/admin/AdminHackathon'
 import AdminShowcase from './pages/admin/AdminShowcase'
 import AdminSpeaker from './pages/admin/AdminSpeaker'
+import ProtectedRoute from './components/ProtectedRoute'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -20,12 +23,15 @@ export default function App() {
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="registrations" element={<AdminRegistrations />} />
-          <Route path="hackathon" element={<AdminHackathon />} />
-          <Route path="showcase" element={<AdminShowcase />} />
-          <Route path="speaker" element={<AdminSpeaker />} />
+        
+        <Route element={<ProtectedRoute />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboard />} />
+            <Route path="registrations" element={<AdminRegistrations />} />
+            <Route path="hackathon" element={<AdminHackathon />} />
+            <Route path="showcase" element={<AdminShowcase />} />
+            <Route path="speaker" element={<AdminSpeaker />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
