@@ -13,7 +13,7 @@ export default function Footer() {
                     <div className="flex flex-col">
                         <Link to="/" className="group cursor-pointer mb-6">
                             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none mb-2 transition-colors duration-300">
-                                BENUE FEST <span className="text-primary group-hover:text-white transition-colors duration-300">2025</span>
+                                BENUE FEST <span className="text-primary group-hover:text-white transition-colors duration-300">2026</span>
                             </h2>
                             <p className="text-primary/70 font-mono text-xs uppercase tracking-widest group-hover:text-primary transition-colors duration-300">
                                 {'{ BLOCKCHAIN & AI CONFERENCE }'}
