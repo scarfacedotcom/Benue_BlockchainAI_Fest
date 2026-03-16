@@ -8,6 +8,7 @@ import CallToAction from '../components/CallToAction'
 import FestBanner from '../components/FestBanner'
 import About from '../components/About'
 import RegistrationCards from '../components/RegistrationCards'
+import GallerySlider from '../components/GallerySlider'
 
 export default function Home() {
     return (
@@ -22,6 +23,7 @@ export default function Home() {
                 <FestBanner />
                 <About />
                 <RegistrationCards />
+                <GallerySlider />
             </main>
             <Footer />
         </div>
