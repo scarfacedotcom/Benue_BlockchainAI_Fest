@@ -9,6 +9,7 @@ import FestBanner from '../components/FestBanner'
 import About from '../components/About'
 import RegistrationCards from '../components/RegistrationCards'
 import GallerySlider from '../components/GallerySlider'
+import CommunityPartners from '../components/CommunityPartners'
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
                 <About />
                 <RegistrationCards />
                 <GallerySlider />
+                <CommunityPartners />
             </main>
             <Footer />
         </div>

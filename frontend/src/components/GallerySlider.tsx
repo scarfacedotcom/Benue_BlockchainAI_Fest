@@ -16,7 +16,7 @@ export default function GallerySlider() {
                             Event Memories
                         </h2>
                         <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
-                            Take a look at some of the best moments from our previous editions. 
+                            Take a look at some of the best moments from our previous editions.
                             Innovation, building, and community.
                         </p>
                     </div>
@@ -31,13 +31,13 @@ export default function GallerySlider() {
                 {/* First Row */}
                 <div className="flex w-fit animate-marquee pause-on-hover gap-6 md:gap-8 px-4">
                     {Row1.map((src, i) => (
-                        <div 
-                            key={`row1-${i}`} 
+                        <div
+                            key={`row1-${i}`}
                             className="w-64 md:w-80 lg:w-96 aspect-4/3 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.05] group shrink-0 bg-gray-800"
                         >
-                            <img 
-                                src={src} 
-                                alt={`Gallery image ${i + 1}`} 
+                            <img
+                                src={src}
+                                alt={`Gallery image ${i + 1}`}
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 loading="lazy"
                             />
@@ -49,13 +49,13 @@ export default function GallerySlider() {
                 {/* Second Row */}
                 <div className="flex w-fit animate-marquee-reverse pause-on-hover gap-6 md:gap-8 px-4">
                     {Row2.map((src, i) => (
-                        <div 
-                            key={`row2-${i}`} 
+                        <div
+                            key={`row2-${i}`}
                             className="w-64 md:w-80 lg:w-96 aspect-4/3 rounded-2xl overflow-hidden shadow-2xl transition-all duration-700 hover:scale-[1.05] group shrink-0 bg-gray-800"
                         >
-                            <img 
-                                src={src} 
-                                alt={`Gallery image ${i + 15}`} 
+                            <img
+                                src={src}
+                                alt={`Gallery image ${i + 15}`}
                                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                 loading="lazy"
                             />
