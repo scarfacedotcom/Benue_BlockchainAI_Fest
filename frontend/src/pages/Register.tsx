@@ -385,11 +385,7 @@ export default function Register() {
                     </Reveal>
 
                     <Reveal delay={150}>
-                        {error && (
-                            <div className="mb-8 p-4 bg-red-50 border border-red-200 text-red-600 rounded-xl text-center animate-in fade-in slide-in-from-top-2">
-                                {error}
-                            </div>
-                        )}
+                      
                         {status === 'success' ? (
                             <div className="bg-white rounded-4xl p-12 text-center shadow-sm border border-gray-100 max-w-xl mx-auto">
                                 <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8">
@@ -579,7 +575,7 @@ export default function Register() {
                                                 onChange={handleInputChange}
                                                 className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary focus:ring-offset-0 cursor-pointer"
                                             />
-                                            <label htmlFor="terms" className="text-gray-500 text-sm font-light">
+                                            <label htmlFor="terms" className="text-black text-sm font-medium">
                                                 I agree to the <a href="#" className="font-medium hover:text-primary transition-colors">Terms of Service</a> & <a href="#" className="font-medium hover:text-primary transition-colors">Privacy Policy</a>.
                                             </label>
                                         </div>

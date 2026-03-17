@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { securityLogger } = require('./logger');
 
 
 function authMiddleware(req, res, next) {

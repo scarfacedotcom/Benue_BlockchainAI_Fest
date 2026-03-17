@@ -46,7 +46,7 @@ export default function AdminDashboard() {
             if (!usersRes.ok || !hackathonRes.ok || !showcaseRes.ok || !speakerRes.ok) {
                 if (usersRes.status === 401 || hackathonRes.status === 401 || showcaseRes.status === 401 || speakerRes.status === 401) {
                     localStorage.removeItem('token')
-                    window.location.href = '/admin-login'
+                    window.location.href = '/admin/login'
                     return
                 }
                 throw new Error('Failed to fetch stats')
