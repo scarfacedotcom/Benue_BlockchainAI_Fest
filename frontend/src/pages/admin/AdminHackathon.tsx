@@ -210,6 +210,7 @@ export default function AdminHackathon() {
                                 <th className="px-6 py-4">Name</th>
                                 <th className="px-6 py-4">Email</th>
                                 <th className="px-6 py-4 hidden lg:table-cell">GitHub/Portfolio</th>
+                                <th className="px-6 py-4 hidden xl:table-cell">Description</th>
                                 <th className="px-6 py-4">Date</th>
                                 <th className="px-6 py-4 text-right">Actions</th>
                             </tr>
@@ -230,6 +231,11 @@ export default function AdminHackathon() {
                                         ) : (
                                             '-'
                                         )}
+                                    </td>
+                                    <td className="px-6 py-4 hidden xl:table-cell">
+                                        <p className="text-sm text-gray-500 line-clamp-2 max-w-xs" title={app.projectDescription}>
+                                            {app.projectDescription}
+                                        </p>
                                     </td>
                                     <td className="px-6 py-4 text-gray-500 text-sm">{formatDate(app.createdAt)}</td>
                                     <td className="px-6 py-4 text-right">

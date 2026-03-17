@@ -210,6 +210,7 @@ export default function AdminSpeaker() {
                                 <th className="px-6 py-4">Name</th>
                                 <th className="px-6 py-4">Email</th>
                                 <th className="px-6 py-4 hidden lg:table-cell">LinkedIn / Talks</th>
+                                <th className="px-6 py-4 hidden xl:table-cell">Expertise</th>
                                 <th className="px-6 py-4">Date</th>
                                 <th className="px-6 py-4 text-right">Actions</th>
                             </tr>
@@ -230,6 +231,11 @@ export default function AdminSpeaker() {
                                         ) : (
                                             '-'
                                         )}
+                                    </td>
+                                    <td className="px-6 py-4 hidden xl:table-cell">
+                                        <p className="text-sm text-gray-500 line-clamp-2 max-w-xs" title={app.expertiseDescription}>
+                                            {app.expertiseDescription}
+                                        </p>
                                     </td>
                                     <td className="px-6 py-4 text-gray-500 text-sm">{formatDate(app.createdAt)}</td>
                                     <td className="px-6 py-4 text-right">
