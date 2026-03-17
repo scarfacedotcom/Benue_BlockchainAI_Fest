@@ -55,7 +55,7 @@ export default function CommunityPartners() {
                         
                         <a  
                             href="mailto:bbaifestival@gmail.com"
-                            className="relative z-10 bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-primary/20 transform hover:-translate-y-1"
+                            className="relative z-10 bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1"
                         >
                             Partner with Us
                         </a>
