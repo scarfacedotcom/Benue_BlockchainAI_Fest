@@ -2,13 +2,8 @@ const { Resend } = require('resend');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Default from address - should be a verified domain in Resend
-// fallback to a dynamic name if EMAIL_USER is just an email
 const defaultFrom = `Benue BlockchainAI Fest <${process.env.EMAIL_FROM || 'onboarding@resend.dev'}>`;
 
-/**
- * Common helper to send email via Resend
- */
 async function sendResendEmail({ to, subject, html, text }) {
   try {
     const { data, error } = await resend.emails.send({
