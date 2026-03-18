@@ -1,13 +1,27 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+const defaultFrom = `Benue BlockchainAI Fest <${process.env.EMAIL_FROM || 'onboarding@resend.dev'}>`;
+
+async function sendResendEmail({ to, subject, html, text }) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: defaultFrom,
+      to: [to],
+      subject,
+      html,
+      text,
+    });
+
+    if (error) {
+      throw error;
+    }
+    return data;
+  } catch (err) {
+    throw err;
+  }
+}
 
 /**
  * @param {Object} user 
@@ -19,11 +33,8 @@ async function sendConfirmationEmail(user, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const mailOptions = {
-    from: `"Benue BlockchainAI Fest" <${process.env.EMAIL_USER}>`,
-    to: user.corporateEmail,
-    subject: 'Event Registration Successful',
-    text: `Hello ${user.firstName},
+  const subject = 'Event Registration Successful';
+  const text = `Hello ${user.firstName},
 
 Thank you for registering for the Benue BlockchainAI Fest!
 
@@ -41,8 +52,9 @@ YouTube: ${process.env.SOCIAL_YOUTUBE}
 We look forward to seeing you!
 
 Warm regards,
-The Benue BlockchainAI Fest Team`,
-    html: `
+The Benue BlockchainAI Fest Team`;
+
+  const html = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -98,11 +110,10 @@ The Benue BlockchainAI Fest Team`,
   </div>
 </body>
 </html>
-    `,
-  };
+    `;
 
   try {
-    await transporter.sendMail(mailOptions);
+    await sendResendEmail({ to: user.corporateEmail, subject, html, text });
     console.log(`[Mailer] Confirmation email sent to ${user.corporateEmail} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -115,29 +126,19 @@ The Benue BlockchainAI Fest Team`,
       return sendConfirmationEmail(user, attempt + 1);
     } else {
       console.error(`[Mailer] All ${maxAttempts} attempts failed for ${user.corporateEmail}.`);
-     
     }
   }
 }
 
-
-
 /**
  * @param {Object} registration
- * @param {string} registration.firstName
- * @param {string} registration.email
- * @param {string} registration.projectDescription
- * @param {number} [attempt=1]
  */
 async function sendHackathonConfirmationEmail(registration, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const mailOptions = {
-    from: `"Benue BlockchainAI Fest" <${process.env.EMAIL_USER}>`,
-    to: registration.email,
-    subject: 'Hackathon Registration Confirmed – Benue BlockchainAI Fest',
-    text: `Hello ${registration.firstName},
+  const subject = 'Hackathon Registration Confirmed – Benue BlockchainAI Fest';
+  const text = `Hello ${registration.firstName},
 
 Your hackathon registration has been received! We're thrilled to have you competing in the Benue BlockchainAI Fest Hackathon.
 
@@ -155,8 +156,9 @@ YouTube: ${process.env.SOCIAL_YOUTUBE}
 Get ready to build, innovate, and win!
 
 Warm regards,
-The Benue BlockchainAI Fest Team`,
-    html: `
+The Benue BlockchainAI Fest Team`;
+
+  const html = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -212,11 +214,10 @@ The Benue BlockchainAI Fest Team`,
   </div>
 </body>
 </html>
-    `,
-  };
+    `;
 
   try {
-    await transporter.sendMail(mailOptions);
+    await sendResendEmail({ to: registration.email, subject, html, text });
     console.log(`[Mailer] Hackathon confirmation email sent to ${registration.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -233,24 +234,15 @@ The Benue BlockchainAI Fest Team`,
   }
 }
 
-
 /**
  * @param {Object} registration
- * @param {string} registration.firstName
- * @param {string} registration.email
- * @param {string} registration.projectDescription
- * @param {string} registration.productLink
- * @param {number} [attempt=1]
  */
 async function sendProductShowcaseConfirmationEmail(registration, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const mailOptions = {
-    from: `"Benue BlockchainAI Fest" <${process.env.EMAIL_USER}>`,
-    to: registration.email,
-    subject: 'Product Showcase Registration Confirmed – Benue BlockchainAI Fest',
-    text: `Hello ${registration.firstName},
+  const subject = 'Product Showcase Registration Confirmed – Benue BlockchainAI Fest';
+  const text = `Hello ${registration.firstName},
 
 Your product showcase registration has been received! We're excited to have you showcase your product at the Benue BlockchainAI Fest.
 
@@ -268,8 +260,9 @@ YouTube: ${process.env.SOCIAL_YOUTUBE}
 Get ready to showcase your innovation to the world!
 
 Warm regards,
-The Benue BlockchainAI Fest Team`,
-    html: `
+The Benue BlockchainAI Fest Team`;
+
+  const html = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -325,11 +318,10 @@ The Benue BlockchainAI Fest Team`,
   </div>
 </body>
 </html>
-    `,
-  };
+    `;
 
   try {
-    await transporter.sendMail(mailOptions);
+    await sendResendEmail({ to: registration.email, subject, html, text });
     console.log(`[Mailer] Product showcase confirmation email sent to ${registration.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -348,21 +340,13 @@ The Benue BlockchainAI Fest Team`,
 
 /**
  * @param {Object} application
- * @param {string} application.firstName
- * @param {string} application.email
- * @param {string} application.expertiseDescription
- * @param {string} application.linkedinLink
- * @param {number} [attempt=1]
  */
 async function sendSpeakerApplicationConfirmationEmail(application, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const mailOptions = {
-    from: `"Benue BlockchainAI Fest" <${process.env.EMAIL_USER}>`,
-    to: application.email,
-    subject: 'Speaker Application Received – Benue BlockchainAI Fest',
-    text: `Hello ${application.firstName},
+  const subject = 'Speaker Application Received – Benue BlockchainAI Fest';
+  const text = `Hello ${application.firstName},
 
 Thank you for your interest in speaking at the Benue BlockchainAI Fest! We have received your application and our team will be reviewing it shortly.
 
@@ -380,8 +364,9 @@ YouTube: ${process.env.SOCIAL_YOUTUBE}
 We appreciate your willingness to share your expertise with our community.
 
 Warm regards,
-The Benue BlockchainAI Fest Team`,
-    html: `
+The Benue BlockchainAI Fest Team`;
+
+  const html = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -437,11 +422,10 @@ The Benue BlockchainAI Fest Team`,
   </div>
 </body>
 </html>
-    `,
-  };
+    `;
 
   try {
-    await transporter.sendMail(mailOptions);
+    await sendResendEmail({ to: application.email, subject, html, text });
     console.log(`[Mailer] Speaker application confirmation email sent to ${application.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(

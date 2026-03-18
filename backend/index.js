@@ -17,6 +17,7 @@ const speakerApplicationRoutes = require('./routes/speakerApplicationRoutes');
 const { globalLimiter } = require('./middleware/rateLimiter');
 
 const app = express();
+app.set('trust proxy', 1); // Allow express-rate-limit behind proxies like Render
 const PORT = process.env.PORT || 5000;
 
 
