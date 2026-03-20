@@ -60,13 +60,13 @@ export default function CommunityPartners() {
                             <p className="text-gray-400 text-lg font-light">Join us in shaping the future of Blockchain and AI in Benue.</p>
                         </div>
                         
-                        <a  
-                            href="mailto:bbaifestival@gmail.com"
+                            <a  
+                                href="mailto:bbaifestival@gmail.com"
                             className="relative z-10 bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1"
-                        >
-                            Partner with Us
-                        </a>
-                    </div>
+                            >
+                                Partner with Us
+                            </a>
+                        </div>
                 </Reveal>
             </div>
         </section>

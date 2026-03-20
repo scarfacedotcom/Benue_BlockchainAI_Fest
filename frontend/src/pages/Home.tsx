@@ -27,8 +27,9 @@ export default function Home() {
                 <About />
                 <RegistrationCards />
                 <GallerySlider />
-                <BecomeSponsor />
                 <CommunityPartners />
+                <BecomeSponsor />
+
                 <FAQ />
             </main>
             <Footer />

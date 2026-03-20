@@ -1,9 +1,10 @@
 import Reveal from './Reveal';
 import { HiMail } from 'react-icons/hi';
+import { FaTelegram } from 'react-icons/fa6';
 
 export default function BecomeSponsor() {
     return (
-        <section id="sponsor" className="py-24 bg-white ">
+        <section id="sponsor" className="pb-24 bg-white ">
             <div className="container mx-auto px-4 max-w-7xl text-center">
                 <Reveal>
                     <div className="flex flex-col items-center">
@@ -15,15 +16,25 @@ export default function BecomeSponsor() {
                             Join us in shaping the future of African technology. Connect with innovators, founders, and talent at the premier Blockchain & AI festival in North-Central Nigeria.
                         </p>
                         
-                        <div className="flex flex-col items-center gap-6">
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <a 
                                 href="mailto:partnerships@benueblockchainfest.com"
-                                className="flex items-center gap-3 bg-secondary hover:bg-primary text-white font-bold py-4 px-12 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
+                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-secondary hover:bg-primary text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-xl"
                             >
                                 <HiMail className="text-2xl" />
                                 Sponsor Benue Fest
                             </a>
-                            </div>
+                            
+                            <a 
+                                href="https://t.me/BenueBlockchainAI"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-secondary border-2 border-secondary/10 hover:border-primary/50 hover:text-primary font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-xl"
+                            >
+                                <FaTelegram className="text-2xl" />
+                                Join Telegram Group
+                            </a>
+                        </div>
                     </div>
                 </Reveal>
             </div>

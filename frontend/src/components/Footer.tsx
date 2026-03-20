@@ -1,4 +1,4 @@
-import { FaXTwitter, FaFacebookF, FaYoutube } from 'react-icons/fa6'
+import { FaXTwitter, FaFacebookF, FaYoutube, FaTelegram } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
@@ -25,6 +25,14 @@ export default function Footer() {
 
                     {/* SOCIALS */}
                     <div className="flex items-center gap-4">
+                        <a 
+                            href="https://t.me/BenueBlockchainAI" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300"
+                        >
+                            <FaTelegram className="text-lg" />
+                        </a>
                         <a 
                             href="https://x.com/BBAIFestival" 
                             target="_blank" 
