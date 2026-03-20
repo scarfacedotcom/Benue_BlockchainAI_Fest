@@ -68,7 +68,7 @@ export default function KeyHighlights() {
                     {highlights.map((card, i) => (
                         <Reveal key={i} delay={i * 100} className="shrink-0 w-[280px] snap-start">
                             <div className="bg-white border border-black/5 rounded-3xl p-8 h-[380px] flex flex-col justify-end relative overflow-hidden group shadow-sm">
-                                <span className="absolute -top-4 -left-4 text-primary/5 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
+                                <span className="absolute -top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
                                     {card.id}
                                 </span>
                                 <div className="relative z-10 uppercase tracking-[0.2em] text-primary/40 font-mono text-[10px] mb-2">Foundation {card.id}</div>
