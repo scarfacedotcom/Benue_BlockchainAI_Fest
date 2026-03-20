@@ -61,28 +61,30 @@ export default function KeyHighlights() {
                 </div>
 
                 {/* MOBILE HORIZONTAL SCROLL - IMPROVED POSITIONING */}
-                <div className="flex md:hidden overflow-x-auto flex-nowrap snap-x snap-mandatory scrollbar-none -mx-4 px-4 gap-5 pb-12">
-                    {/* START PADDING */}
-                    <div className="shrink-0 w-0"></div>
-                    
-                    {highlights.map((card, i) => (
-                        <Reveal key={i} delay={i * 100} className="shrink-0 w-[280px] snap-start">
-                            <div className="bg-white border border-black/5 rounded-3xl p-8 h-[380px] flex flex-col justify-end relative overflow-hidden group shadow-sm">
-                                <span className="absolute -top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
-                                    {card.id}
-                                </span>
-                                <div className="relative z-10 uppercase tracking-[0.2em] text-primary/40 font-mono text-[10px] mb-2">Foundation {card.id}</div>
-                                <h3 className="text-xl font-bold text-background mb-4 relative z-10 leading-tight">{card.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed font-light relative z-10">
-                                    {card.text}
-                                </p>
+                <Reveal delay={200}>
+                    <div className="flex md:hidden overflow-x-auto flex-nowrap snap-x snap-mandatory scrollbar-none -mx-4 px-4 gap-5 pb-12">
+                        {/* START PADDING */}
+                        <div className="shrink-0 w-0"></div>
+                        
+                        {highlights.map((card, i) => (
+                            <div key={i} className="shrink-0 w-[280px] snap-start">
+                                <div className="bg-white border border-black/5 rounded-3xl p-8 h-[380px] flex flex-col justify-end relative overflow-hidden group shadow-sm">
+                                    <span className="absolute -top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
+                                        {card.id}
+                                    </span>
+                                    <div className="relative z-10 uppercase tracking-[0.2em] text-primary/40 font-mono text-[10px] mb-2">Foundation {card.id}</div>
+                                    <h3 className="text-xl font-bold text-background mb-4 relative z-10 leading-tight">{card.title}</h3>
+                                    <p className="text-gray-600 text-sm leading-relaxed font-light relative z-10">
+                                        {card.text}
+                                    </p>
+                                </div>
                             </div>
-                        </Reveal>
-                    ))}
+                        ))}
 
-                    {/* END PADDING */}
-                    <div className="shrink-0 w-4"></div>
-                </div>
+                        {/* END PADDING */}
+                        <div className="shrink-0 w-4"></div>
+                    </div>
+                </Reveal>
 
               
             </div>
