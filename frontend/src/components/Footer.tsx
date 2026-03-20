@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="bg-secondary pt-24 pb-12 mt-auto border-t border-white/5 relative overflow-hidden">
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
                 {/* TOP HEADER / BRANDING BLOCK */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10">
@@ -59,7 +59,7 @@ export default function Footer() {
                     </p>
                     <div className="flex items-center gap-6">
                         <a href="/#about" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">About</a>
-                        
+                        <a href="/#sponsor" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Sponsor</a>
                         <Link to="/register" className="text-white/40 hover:text-primary text-sm font-medium transition-colors">Register</Link>
                     </div>
                 </div>

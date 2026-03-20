@@ -11,7 +11,7 @@ export default function KeyHighlights() {
                 ))}
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-7xl ">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl ">
                 <div className=" w-full z">
 
                     {/* HIGHLIGHTS HEADER BLOCK */}
@@ -37,7 +37,7 @@ export default function KeyHighlights() {
                     <Reveal delay={200}>
                         <div className="hidden md:flex flex-row items-center w-full justify-center lg:pr-10 mb-10 overflow-visible relative group/deck">
                             {[
-                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 3-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
+                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 5-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
                                 { id: '02', title: 'What to expect at Benue Fest', text: '700+ talented developers, 20+ leading Web3 & AI companies, 72-hour intensive hackathon, keynote speakers, technical workshops, investor pitching rounds, and unparalleled networking opportunities.' },
                                 { id: '03', title: 'The Most important web3 Conference', text: 'World-class 2-day summit featuring product showcases, fireside chats with industry leaders, bootcamps, panel discussions on blockchain & AI, strategic partnerships, mentorship opportunities, and live funding pitches.' },
                                 { id: '04', title: 'Why Visit Benue', text: 'Experience Nigeria\'s unique cultural heritage, natural attractions, and warm hospitality. From guided cultural tours to the National Museum, nature reserves, Benue offers unforgettable memories beyond the conference.', },
@@ -72,7 +72,7 @@ export default function KeyHighlights() {
                     <Reveal delay={200}>
                         <div className="flex md:hidden flex-col gap-6 w-full mb-10">
                             {[
-                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 3-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
+                                { id: '01', title: 'What is Benue Fest', text: 'Africa\'s premier Blockchain & AI festival. An inaugural 5-day celebration of innovation, featuring a non-stop hackathon, industry conference, and immersive cultural experiences in Nigeria\'s historic Benue state.' },
                                 { id: '02', title: 'What to expect at Benue Fest', text: '700+ talented developers, 20+ leading Web3 & AI companies, 72-hour intensive hackathon, keynote speakers, technical workshops, investor pitching rounds, and unparalleled networking opportunities.' },
                                 { id: '03', title: 'The Most important web3 Conference', text: 'World-class 2-day summit featuring product showcases, fireside chats with industry leaders, bootcamps, panel discussions on blockchain & AI, strategic partnerships, mentorship opportunities, and live funding pitches.' },
                                 { id: '04', title: 'Why Visit Benue', text: 'Experience Nigeria\'s unique cultural heritage, natural attractions, and warm hospitality. From guided cultural tours to the National Museum, nature reserves, Benue offers unforgettable memories beyond the conference.' },

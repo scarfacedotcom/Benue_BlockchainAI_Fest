@@ -16,7 +16,7 @@ export default function EventStructure() {
                 ))}
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
                 {/* HEADER SECTION */}
                 <Reveal>
@@ -38,13 +38,13 @@ export default function EventStructure() {
 
                     {/* TIMELINE ITEM 1 */}
                     <Reveal delay={150}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-12 mb-10 md:mb-12 w-full relative">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
 
                             <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
                                 <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
                                     <FaArrowRight className="text-sm md:text-base" />
                                 </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">19th Aug</span>
+                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">17th – 19th June</span>
                             </div>
 
                             {/* CARD */}
@@ -65,18 +65,18 @@ export default function EventStructure() {
 
                     {/* TIMELINE ITEM 2 */}
                     <Reveal delay={250}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-12 mb-10 md:mb-12 w-full relative">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
 
                             <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
                                 <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
                                     <FaArrowRight className="text-sm md:text-base" />
                                 </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">22nd Aug</span>
+                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">20th – 21st June</span>
                             </div>
 
                             {/* CARD */}
                             <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Tech Conference Summit</h3>
+                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Conference & Festival</h3>
                                 <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
                                     The 2-day summit brings together 20+ leading Web3 & AI companies, industry experts, and 700+ developers. Discover cutting-edge products, connect with founders and VCs, attend technical deep-dives, and explore partnership opportunities with Africa's most innovative ecosystem.
                                 </p>
@@ -94,26 +94,25 @@ export default function EventStructure() {
 
                     {/* TIMELINE ITEM 3 */}
                     <Reveal delay={350}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-12 w-full relative">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
 
                             <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
                                 <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
                                     <FaArrowRight className="text-sm md:text-base" />
                                 </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">23rd Aug</span>
+                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">Aug – Dec</span>
                             </div>
 
                             {/* CARD */}
                             <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Benue Experience</h3>
+                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Post-Festival Bootcamps</h3>
                                 <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    Celebrate your achievements while experiencing the warmth and culture of Nigeria. Benue, the 'Food Basket of Nigeria,' offers a unique blend of history, natural beauty, and vibrant community. Unwind with fellow innovators in an unforgettable cultural experience.
+                                    The journey continues with advanced technical workshops, deep-dives into Blockchain architecture, and AI development bootcamps. Our goal is to transform the inspiration from the festival into career-ready skills that empower developers across Benue and beyond.
                                 </p>
                                 <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Guided cultural heritage tours</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> National Museum & historical sites</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Nature reserves & scenic parks</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Authentic Afrobeats celebration & afterparties</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Specialized developer tracks</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Industry-led certifications</li>
+                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Startup incubation & mentorship</li>
                                 </ul>
                             </div>
 

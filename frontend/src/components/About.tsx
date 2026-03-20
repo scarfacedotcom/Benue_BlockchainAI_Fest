@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 export default function About() {
     return (
         <section id="about" className="bg-white py-24 md:py-32 xl:py-40 relative overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
                 {/* BACKGROUND MAP - subtle watermark style */}
                 <div className="absolute top-[-10%] right-[-5%] w-[120%] md:w-[80%] lg:w-[60%] max-w-[800px] z-0 pointer-events-none opacity-[0.04] flex justify-end">

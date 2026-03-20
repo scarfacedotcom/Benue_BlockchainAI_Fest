@@ -13,8 +13,8 @@ const partners = [
 
 export default function CommunityPartners() {
     return (
-        <section id="partners" className="bg-white py-24 md:py-32 border-t border-gray-100">
-            <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
+        <section id="partners" className="bg-white py-24 md:py-32">
+            <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16">
                         <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Our Network</span>
@@ -27,20 +27,26 @@ export default function CommunityPartners() {
                     </div>
                 </Reveal>
 
-                <Reveal delay={200}>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 md:gap-12 items-center justify-items-center">
-                        {partners.map((partner, i) => (
-                            <div 
-                                key={i} 
-                                className="w-full max-w-[180px]  transition-all duration-500  transform hover:scale-120"
-                            >
-                                <img 
-                                    src={partner.logo} 
-                                    alt={partner.name} 
-                                    className="w-full h-auto object-contain max-h-40"
-                                />
-                            </div>
-                        ))}
+                <Reveal delay={100}>
+                    <div className="relative overflow-hidden group">
+                        {/* Gradient Masks for smooth fading at edges */}
+                        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+                        <div className="flex w-max animate-marquee pause-on-hover gap-10 md:gap-10 items-center py-4">
+                            {[...partners, ...partners, ...partners].map((partner, i) => (
+                                <div 
+                                    key={i} 
+                                    className="shrink-0 w-30 md:w-32 lg:w-48 transition-all duration-500 transform hover:scale-110"
+                                >
+                                    <img 
+                                        src={partner.logo} 
+                                        alt={partner.name} 
+                                        className="w-full h-auto object-contain max-h-16 md:max-h-20"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </Reveal>
 

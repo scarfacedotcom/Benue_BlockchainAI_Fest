@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 export default function Showcase() {
     return (
         <section id="location" className="bg-white py-24 md:py-32 xl:py-40">
-            <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
+            <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
 
                 {/* TOP HEADER & STATS */}
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-24 mb-24">

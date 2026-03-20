@@ -1,4 +1,5 @@
 import Reveal from './Reveal'
+import Countdown from './Countdown'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 
@@ -10,7 +11,7 @@ export default function Hero() {
             {/* MESH GRID PATTERN */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)] pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full max-w-8xl flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
                 {/* LEFT CONTENT BLOCK */}
                 <div className="w-full lg:w-[55%] flex flex-col relative">
@@ -20,7 +21,7 @@ export default function Hero() {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
                             </span>
-                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Benue, Nigeria • JUN 19-23, 2026</span>
+                            <span className="text-white text-xs md:text-sm font-medium tracking-wider uppercase">Benue, Nigeria • JUN 17-21, 2026</span>
                         </div>
 
                         <h1 className="text-5xl sm:text-6xl  lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">
@@ -90,7 +91,12 @@ export default function Hero() {
                                     <span className="text-primary text-4xl font-black opacity-20">01</span>
                                 </div>
                                 <div>
-                                    <h3 className="text-3xl font-black text-secondary  leading-none mb-3">72-Hour <br /> Hackathon</h3>
+                                    <h3 className="text-3xl font-black text-secondary  leading-none mb-6">72-Hour <br /> Hackathon</h3>
+                                    
+                                    <div className="mb-6">
+                                        <Countdown />
+                                    </div>
+
                                     <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden mt-4">
                                         <div className="w-[85%] h-full bg-primary rounded-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-white/30 w-full animate-[shimmer_2s_infinite]"></div>

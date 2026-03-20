@@ -5,11 +5,13 @@ import Showcase from '../components/Showcase'
 import EventStructure from '../components/EventStructure'
 import KeyHighlights from '../components/KeyHighlights'
 import CallToAction from '../components/CallToAction'
-import FestBanner from '../components/FestBanner'
 import About from '../components/About'
 import RegistrationCards from '../components/RegistrationCards'
 import GallerySlider from '../components/GallerySlider'
 import CommunityPartners from '../components/CommunityPartners'
+import FAQ from '../components/FAQ'
+import BecomeSponsor from '../components/BecomeSponsor'
+import Speakers from '../components/Speakers'
 
 export default function Home() {
     return (
@@ -20,12 +22,14 @@ export default function Home() {
                 <Showcase />
                 <EventStructure />
                 <KeyHighlights />
+                <Speakers />
                 <CallToAction />
-                <FestBanner />
                 <About />
                 <RegistrationCards />
                 <GallerySlider />
+                <BecomeSponsor />
                 <CommunityPartners />
+                <FAQ />
             </main>
             <Footer />
         </div>
