@@ -28,10 +28,10 @@ export default function Speakers() {
                     </div>
                 </Reveal>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
                     {speakers.map((speaker, i) => (
-                        <Reveal key={i} delay={i * 100}>
-                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500">
+                        <Reveal key={i} delay={i * 100} className="shrink-0 w-[75vw] sm:w-[50vw] md:w-auto snap-center">
+                            <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0">
                                 {/* IMAGE PLACEHOLDER */}
                                 <div className="aspect-video bg-white/5 relative flex items-center justify-center overflow-hidden">
                                     {/* ABSTRACT ICON PLACEHOLDER */}
@@ -54,6 +54,7 @@ export default function Speakers() {
                 </div>
 
                 
+               
             </div>
         </section>
     );

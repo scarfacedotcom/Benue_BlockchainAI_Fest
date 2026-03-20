@@ -1,130 +1,101 @@
-import { FaArrowRight } from 'react-icons/fa6'
 import Reveal from './Reveal'
 
 export default function EventStructure() {
+    const events = [
+        {
+            date: '17th – 19th June',
+            title: '72-Hour Hackathon',
+            description: "'Dare to Build' - Our flagship hackathon unites 700+ Web3 and AI developers in non-stop innovation. Tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI.",
+            highlights: ['72 hours of non-stop building', 'Live mentorship & support', 'Prize pools & pitching']
+        },
+        {
+            date: '20th – 21st June',
+            title: 'Conference & Festival',
+            description: "The 2-day summit brings together 20+ leading Web3 & AI companies, industry experts, and 700+ builders. Discover cutting-edge products, connect with founders, and explore Africa's most innovative ecosystem.",
+            highlights: ['Product exhibitions & demos', 'Fireside chats & keynotes', 'Technical workshops']
+        },
+        {
+            date: 'August – December',
+            title: 'Post-Festival Bootcamps',
+            description: "Continuing our commitment to skill development with intensive bootcamps focused on Blockchain development, AI engineering, and technical entrepreneurship to turn inspiration into practical skills.",
+            highlights: ['Specialized developer tracks', 'Industry certifications', 'Startup incubation']
+        }
+    ];
+
     return (
-        <section id="expect" className="bg-background py-16 md:py-24 relative overflow-hidden">
-
-  {/* MESH GRID PATTERN */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,black_40%,transparent_100%)] pointer-events-none"></div>
-
-
-            {/* FAINT VERTICAL BACKGROUND LINES */}
-            <div className="absolute inset-0 pointer-events-none flex justify-between px-10 md:px-20 opacity-5 sm:opacity-10">
-                {[...Array(8)].map((_, i) => (
-                    <div key={i} className="h-full w-px bg-black/60"></div>
-                ))}
-            </div>
-
+        <section id="expect" className="bg-background py-24 md:py-32 relative overflow-hidden">
+            
+        
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
-                {/* HEADER SECTION */}
-                <Reveal>
-                    <div className="mb-16 md:mb-24 max-w-2xl">
-                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-primary leading-tight mb-6">
-                            What to Expect in Benue
-                        </h2>
-                        <p className="text-white text-sm md:text-xl leading-relaxed font-light mt-6">
-                            Benue Blockchain AI Fest combines a rigorous 3-day hackathon, industry-leading tech conference, and cultural immersion. Connect with 500+ builders, meet 20+ Web3 & AI companies, and experience the heart of Nigeria's innovation ecosystem.
-                        </p>
-                    </div>
-                </Reveal>
 
-                {/* TIMELINE SECTION */}
+
+                <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl relative z-10">
+                    <Reveal>
+                        <div className="flex flex-col items-center text-center mb-16 md:mb-24">
+                            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Foundations</span>
+                            <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-white leading-tight mb-8 tracking-tight">
+                            Event Structure
+                            </h2    >
+                            <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
+                                A carefully curated journey from rapid innovation to industry-wide collaboration and long-term skill development.
+                            </p>
+                        </div>
+                    </Reveal>
+                </div>
+
+                {/* REWORKED TIMELINE */}
                 <div className="relative">
+                    
+                    {/* CENTRAL LINE (Desktop) */}
+                    <div className="absolute left-[31px] md:left-1/2 top-4 bottom-12 w-px bg-white/10 hidden sm:block -translate-x-1/2">
+                        <div className="absolute inset-0 bg-linear-to-b from-primary/50 via-transparent to-transparent"></div>
+                    </div>
 
-                    {/* VERTICAL LINE CONNECTION */}
-                    <div className="absolute left-3.75 sm:left-4.75 md:left-5.75 top-6 bottom-16 w-px bg-primary/40 hidden sm:block"></div>
+                    <div className="flex flex-col gap-12 md:gap-24">
+                        {events.map((event, i) => (
+                            <div key={i} className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start md:items-center gap-8 md:gap-16 relative group`}>
+                                
+                                {/* TIMELINE NODE */}
+                                <div className="absolute left-[31px] md:left-1/2 top-4 md:top-1/2 w-4 h-4 rounded-full border-2 border-primary bg-background z-20 -translate-x-1/2 -translate-y-1/2 hidden sm:block group-hover:scale-150 transition-transform duration-500 shadow-[0_0_15px_rgba(0,218,153,0.5)]"></div>
 
-                    {/* TIMELINE ITEM 1 */}
-                    <Reveal delay={150}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
-
-                            <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
-                                <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
-                                    <FaArrowRight className="text-sm md:text-base" />
+                                {/* DATE COLUMN */}
+                                <div className={`w-full md:w-1/2 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-16 md:pl-0`}>
+                                    <Reveal delay={i * 100}>
+                                        <span className="text-primary font-mono text-sm md:text-lg mb-2 block uppercase tracking-widest">{event.date}</span>
+                                        <h3 className="text-2xl md:text-4xl font-bold text-white tracking-tight">{event.title}</h3>
+                                    </Reveal>
                                 </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">17th – 19th June</span>
-                            </div>
 
-                            {/* CARD */}
-                            <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">72-Hour Hackathon</h3>
-                                <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    'Dare to Build' - Our flagship hackathon unites 700+ Web3 and AI developers in non-stop innovation. Tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI. Build, compete, and showcase your breakthrough ideas.
-                                </p>
-                                <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> 72 hours of non-stop building</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Live mentorship & technical support</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Prize pools & investor pitching</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </Reveal>
-
-                    {/* TIMELINE ITEM 2 */}
-                    <Reveal delay={250}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
-
-                            <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
-                                <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
-                                    <FaArrowRight className="text-sm md:text-base" />
+                                {/* CONTENT CARD */}
+                                <div className="w-full md:w-1/2 pl-6 md:pl-0">
+                                    <Reveal delay={i * 200}>
+                                        <div className="bg-white/3 border border-white/5 p-8 md:p-10 rounded-4xl backdrop-blur-sm group-hover:bg-white/6 group-hover:border-white/10 transition-all duration-500">
+                                            <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">
+                                                {event.description}
+                                            </p>
+                                            <ul className="flex flex-col gap-4">
+                                                {event.highlights.map((item, idx) => (
+                                                    <li key={idx} className="flex items-center gap-4 text-white/90 font-light text-base md:text-lg">
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0"></div>
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </Reveal>
                                 </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">20th – 21st June</span>
+
                             </div>
-
-                            {/* CARD */}
-                            <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Conference & Festival</h3>
-                                <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    The 2-day summit brings together 20+ leading Web3 & AI companies, industry experts, and 700+ developers. Discover cutting-edge products, connect with founders and VCs, attend technical deep-dives, and explore partnership opportunities with Africa's most innovative ecosystem.
-                                </p>
-                                <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Product exhibitions & demos</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Industry fireside chats & keynotes</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Technical workshops & bootcamps</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Investor pitch & funding rounds</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Strategic partnerships & mentorship</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </Reveal>
-
-                    {/* TIMELINE ITEM 3 */}
-                    <Reveal delay={350}>
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-16 mb-10 md:mb-12 w-full relative">
-
-                            <div className="flex items-center sm:items-start pt-1 md:pt-4 gap-4 w-full sm:w-32 md:w-36 shrink-0">
-                                <div className="bg-primary text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center relative z-10 shrink-0 shadow-[0_0_15px_rgba(0,218,153,0.3)]">
-                                    <FaArrowRight className="text-sm md:text-base" />
-                                </div>
-                                <span className="text-white font-medium text-base md:text-lg min-w-max mt-1 md:mt-2.5">Aug – Dec</span>
-                            </div>
-
-                            {/* CARD */}
-                            <div className="bg-secondary rounded-2xl md:rounded-3xl p-4 md:p-6 w-full md:flex-1 shadow-lg ml-auto sm:ml-0">
-                                <h3 className="text-2xl md:text-3xl font-medium text-primary mb-4 md:mb-6">Post-Festival Bootcamps</h3>
-                                <p className="text-white text-lg md:text-lg leading-relaxed mb-6 font-light">
-                                    The journey continues with advanced technical workshops, deep-dives into Blockchain architecture, and AI development bootcamps. Our goal is to transform the inspiration from the festival into career-ready skills that empower developers across Benue and beyond.
-                                </p>
-                                <ul className="flex flex-wrap gap-y-4 gap-x-8">
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Specialized developer tracks</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Industry-led certifications</li>
-                                    <li className="text-white text-lg sm:text-lg flex items-center gap-2.5 font-light"><div className="w-1 h-1 bg-white rounded-full"></div> Startup incubation & mentorship</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </Reveal>
+                        ))}
+                    </div>
 
                 </div>
 
+               
+
             </div>
-
-
-
         </section>
     )
 }
+

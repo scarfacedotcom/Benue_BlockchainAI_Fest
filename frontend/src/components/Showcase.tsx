@@ -80,7 +80,7 @@ export default function Showcase() {
                             {/* BOTTOM WIDE IMAGE */}
                             <div className="w-full h-62.5 md:h-1/2 overflow-hidden rounded-2xl bg-gray-50">
                                 <img
-                                    src="/12.jpg"
+                                    src="/3.jpg"
                                     alt="Audience at event"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
                                 />

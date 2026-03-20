@@ -30,8 +30,8 @@ export default function CommunityPartners() {
                 <Reveal delay={100}>
                     <div className="relative overflow-hidden group">
                         {/* Gradient Masks for smooth fading at edges */}
-                        <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none"></div>
-                        <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute left-0 top-0 bottom-0 w-10 bg-linear-to-r from-white/50 to-transparent z-10 pointer-events-none"></div>
+                        <div className="absolute right-0 top-0 bottom-0 w-10 bg-linear-to-l from-white/50 to-transparent z-10 pointer-events-none"></div>
 
                         <div className="flex w-max animate-marquee pause-on-hover gap-10 md:gap-10 items-center py-4">
                             {[...partners, ...partners, ...partners].map((partner, i) => (
