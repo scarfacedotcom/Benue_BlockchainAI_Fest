@@ -31,7 +31,7 @@ export default function KeyHighlights() {
 
 
                 {/* DESKTOP STACKED DECK */}
-                <div className="hidden md:flex flex-row items-center w-full justify-center lg:pr-10 mb-20 overflow-visible relative group/deck pt-10">
+                <div className="hidden lg:flex flex-row items-center w-full justify-center lg:pr-10 mb-20 overflow-visible relative group/deck pt-10">
                     {highlights.map((card, i) => (
                         <Reveal key={i} delay={i * 100} className="hover:z-50 hover:relative transition-all duration-300">
                             <div
@@ -62,7 +62,7 @@ export default function KeyHighlights() {
 
                 {/* MOBILE HORIZONTAL SCROLL - IMPROVED POSITIONING */}
                 <Reveal delay={200}>
-                    <div className="flex md:hidden overflow-x-auto flex-nowrap snap-x snap-mandatory scrollbar-none -mx-4 px-4 gap-5 pb-12">
+                    <div className="flex lg:hidden overflow-x-auto flex-nowrap snap-x snap-mandatory scrollbar-none -mx-4 px-4 gap-5 pb-12">
                         {/* START PADDING */}
                         <div className="shrink-0 w-0"></div>
                         
