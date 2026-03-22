@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Reveal from './Reveal';
 
 const speakers = [
@@ -28,6 +29,15 @@ const speakers = [
 ];
 
 export default function Speakers() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
     return (
         <section id="speakers" className="bg-background py-24 md:py-32 relative overflow-hidden">
             {/* MESH GRID PATTERN */}
@@ -46,9 +56,9 @@ export default function Speakers() {
                     </div>
                 </Reveal>
 
-                <div className="flex md:grid overflow-x-auto overflow-y-hidden touch-pan-y md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
-                    {speakers.map((speaker, i) => (
-                        <Reveal key={i} delay={i * 100} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
+                <div className="flex md:grid overflow-x-auto md:overflow-hidden flex-nowrap md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 pb-8 md:pb-0 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
+                    {speakers.map((speaker, i) => {
+                        const cardContent = (
                             <div className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden transition-all duration-500 mr-2 md:mr-0 grow flex flex-col">
                                 {/* IMAGE OR PLACEHOLDER */}
                                 <div className="aspect-4/5 sm:aspect-3/4 bg-white/5 relative flex items-center justify-center overflow-hidden">
@@ -68,10 +78,19 @@ export default function Speakers() {
                                         <span className="text-gray-400 font-light text-sm sm:text-base">{speaker.company}</span>
                                     </div>
                                 </div>
-                                
                             </div>
-                        </Reveal>
-                    ))}
+                        );
+
+                        return isMobile ? (
+                            <div key={i} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
+                                {cardContent}
+                            </div>
+                        ) : (
+                            <Reveal key={i} delay={i * 100} className="shrink-0 w-[80vw] sm:w-[50vw] md:w-auto snap-center flex flex-col">
+                                {cardContent}
+                            </Reveal>
+                        );
+                    })}
                 </div>
 
                 
