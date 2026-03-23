@@ -1,27 +1,50 @@
-const { Resend } = require('resend');
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+require('dotenv').config();
+const dns = require('node:dns');
+dns.setDefaultResultOrder('ipv4first');
 
 const defaultFrom = `Benue BlockchainAI Fest <${process.env.EMAIL_FROM || 'onboarding@resend.dev'}>`;
 
+
+
+const logoUrl = process.env.LOGO_URL;
+const logoHtml = logoUrl 
+  ? `<div style="text-align: center; margin-bottom: 20px;"><img src="${logoUrl}" alt="Logo" style="max-height: 80px;" /></div>` 
+  : `<div style="font-family: 'Courier New', Courier, monospace; font-weight: 900; text-align: center; line-height: 1;">
+        <div style="font-size: 26px; color: #ffffff; letter-spacing: -1.5px; margin-bottom: 4px; text-transform: uppercase;">
+          Benue <span style="color: #00d2ff;">Blockchain</span>
+        </div>
+        <div style="font-size: 14px; color: rgba(0, 210, 255, 0.7); text-transform: uppercase; letter-spacing: 5px; margin-top: 8px;">
+          & AI Fest
+        </div>
+      </div>`;
+
 async function sendResendEmail({ to, subject, html, text }) {
   try {
-    const { data, error } = await resend.emails.send({
-      from: defaultFrom,
-      to: [to],
-      subject,
-      html,
-      text,
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: defaultFrom,
+        to: [to],
+        subject,
+        html,
+        text,
+      }),
     });
 
-    if (error) {
-      throw error;
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.message || 'Failed to send email via Resend API');
     }
     return data;
   } catch (err) {
     throw err;
   }
 }
+
 
 /**
  * @param {Object} user 
@@ -63,6 +86,7 @@ The Benue BlockchainAI Fest Team`;
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 40px 30px; text-align: center; }
+    .header img { max-width: 200px; margin-bottom: 20px; }
     .header h1 { color: #00d4ff; margin: 0; font-size: 24px; }
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
@@ -71,15 +95,17 @@ The Benue BlockchainAI Fest Team`;
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
     .social a { display: inline-block; margin-right: 12px; color: #00d4ff; text-decoration: none; font-weight: bold; }
-    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 16px; font-size: 12px; }
+    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 24px; font-size: 12px; }
+    .footer img { max-width: 150px; margin-top: 10px; opacity: 0.8; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎉 Registration Confirmed!</h1>
-      <p>Benue BlockchainAI Fest</p>
+      ${logoHtml}
+      <h1 style="margin-top: 30px;">🎉 Registration Confirmed!</h1>
     </div>
+
     <div class="body">
       <h2>Hello ${user.firstName},</h2>
       <p>Thank you for registering for the <strong>Benue BlockchainAI Fest</strong>! We're excited to have you join us.</p>
@@ -105,15 +131,19 @@ The Benue BlockchainAI Fest Team`;
       <p style="margin-top: 30px;">We look forward to seeing you there! 🚀</p>
     </div>
     <div class="footer">
-      &copy; 2026 Benue BlockchainAI Fest. All rights reserved.
+      <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
     </div>
   </div>
 </body>
 </html>
+
+
     `;
 
   try {
     await sendResendEmail({ to: user.corporateEmail, subject, html, text });
+
+
     console.log(`[Mailer] Confirmation email sent to ${user.corporateEmail} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -167,6 +197,7 @@ The Benue BlockchainAI Fest Team`;
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 40px 30px; text-align: center; }
+    .header img { max-width: 200px; margin-bottom: 20px; }
     .header h1 { color: #00d4ff; margin: 0; font-size: 24px; }
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
@@ -175,15 +206,17 @@ The Benue BlockchainAI Fest Team`;
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
     .social a { display: inline-block; margin-right: 12px; color: #00d4ff; text-decoration: none; font-weight: bold; }
-    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 16px; font-size: 12px; }
+    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 24px; font-size: 12px; }
+    .footer img { max-width: 150px; margin-top: 10px; opacity: 0.8; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🚀 Hackathon Registration Confirmed!</h1>
-      <p>Benue BlockchainAI Fest</p>
+      ${logoHtml}
+      <h1 style="margin-top: 30px;">🚀 Hackathon Registration Confirmed!</h1>
     </div>
+
     <div class="body">
       <h2>Hello ${registration.firstName},</h2>
       <p>Your hackathon registration has been received! We're excited to have you build at the <strong>Benue BlockchainAI Fest Hackathon</strong>.</p>
@@ -209,15 +242,18 @@ The Benue BlockchainAI Fest Team`;
       <p style="margin-top: 30px;">Get ready to build, innovate, and win! 🏆</p>
     </div>
     <div class="footer">
-      &copy; 2026 Benue BlockchainAI Fest. All rights reserved.
+      <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
     </div>
   </div>
 </body>
 </html>
+
+
     `;
 
   try {
     await sendResendEmail({ to: registration.email, subject, html, text });
+
     console.log(`[Mailer] Hackathon confirmation email sent to ${registration.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -271,6 +307,7 @@ The Benue BlockchainAI Fest Team`;
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 40px 30px; text-align: center; }
+    .header img { max-width: 200px; margin-bottom: 20px; }
     .header h1 { color: #00d4ff; margin: 0; font-size: 24px; }
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
@@ -279,15 +316,17 @@ The Benue BlockchainAI Fest Team`;
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
     .social a { display: inline-block; margin-right: 12px; color: #00d4ff; text-decoration: none; font-weight: bold; }
-    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 16px; font-size: 12px; }
+    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 24px; font-size: 12px; }
+    .footer img { max-width: 150px; margin-top: 10px; opacity: 0.8; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🚀 Product Showcase Registration Confirmed!</h1>
-      <p>Benue BlockchainAI Fest</p>
+      ${logoHtml}
+      <h1 style="margin-top: 30px;">🚀 Product Showcase Registration Confirmed!</h1>
     </div>
+
     <div class="body">
       <h2>Hello ${registration.firstName},</h2>
       <p>Your product showcase registration has been received! We're excited to have you present your product at the <strong>Benue BlockchainAI Fest</strong>.</p>
@@ -313,15 +352,19 @@ The Benue BlockchainAI Fest Team`;
       <p style="margin-top: 30px;">Get ready to showcase your innovation to the world! </p>
     </div>
     <div class="footer">
-      &copy; 2026 Benue BlockchainAI Fest. All rights reserved.
+      <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
     </div>
   </div>
 </body>
 </html>
+
+
+
     `;
 
   try {
     await sendResendEmail({ to: registration.email, subject, html, text });
+
     console.log(`[Mailer] Product showcase confirmation email sent to ${registration.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -375,6 +418,7 @@ The Benue BlockchainAI Fest Team`;
     body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 40px 30px; text-align: center; }
+    .header img { max-width: 200px; margin-bottom: 20px; }
     .header h1 { color: #00d4ff; margin: 0; font-size: 24px; }
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
@@ -383,15 +427,17 @@ The Benue BlockchainAI Fest Team`;
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
     .social a { display: inline-block; margin-right: 12px; color: #00d4ff; text-decoration: none; font-weight: bold; }
-    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 16px; font-size: 12px; }
+    .footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 24px; font-size: 12px; }
+    .footer img { max-width: 150px; margin-top: 10px; opacity: 0.8; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎙️ Speaker Application Received!</h1>
-      <p>Benue BlockchainAI Fest</p>
+      ${logoHtml}
+      <h1 style="margin-top: 30px;">🎙️ Speaker Application Received!</h1>
     </div>
+
     <div class="body">
       <h2>Hello ${application.firstName},</h2>
       <p>Thank you for expressing interest in speaking at the <strong>Benue BlockchainAI Fest</strong>! Our team has received your application and will review it soon.</p>
@@ -417,15 +463,19 @@ The Benue BlockchainAI Fest Team`;
       <p style="margin-top: 30px;">We appreciate your willingness to share your knowledge with our community! ✨</p>
     </div>
     <div class="footer">
-      &copy; 2026 Benue BlockchainAI Fest. All rights reserved.
+      <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
     </div>
   </div>
 </body>
 </html>
+
+
+
     `;
 
   try {
     await sendResendEmail({ to: application.email, subject, html, text });
+
     console.log(`[Mailer] Speaker application confirmation email sent to ${application.email} (attempt ${attempt})`);
   } catch (error) {
     console.error(
@@ -442,4 +492,9 @@ The Benue BlockchainAI Fest Team`;
   }
 }
 
-module.exports = { sendConfirmationEmail, sendHackathonConfirmationEmail, sendProductShowcaseConfirmationEmail, sendSpeakerApplicationConfirmationEmail };
+module.exports = {
+  sendConfirmationEmail,
+  sendHackathonConfirmationEmail,
+  sendProductShowcaseConfirmationEmail,
+  sendSpeakerApplicationConfirmationEmail
+};
