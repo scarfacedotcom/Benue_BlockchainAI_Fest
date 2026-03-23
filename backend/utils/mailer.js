@@ -56,23 +56,28 @@ async function sendConfirmationEmail(user, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const subject = 'Event Registration Successful';
+  const subject = 'Welcome to Africa\'s Premier Blockchain & AI Festival! – Benue Fest';
   const text = `Hello ${user.firstName},
 
-Thank you for registering for the Benue BlockchainAI Fest!
+Thank you for registering for the Benue BlockchainAI Fest! We are spotlighting innovation to onboard the next billion.
+
+Get ready for an inaugural 5-day celebration featuring 700+ talented developers and 20+ leading Web3 & AI companies. This is not just a conference, but a platform to bring your craziest ideas to life!
 
 Event Details:
 
 Date: ${process.env.EVENT_DATE}
 Venue: ${process.env.EVENT_VENUE}
 
-Follow us:
+Follow us for updates:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
 Facebook: ${process.env.SOCIAL_FACEBOOK}
 YouTube: ${process.env.SOCIAL_YOUTUBE}
 
-We look forward to seeing you!
+Join our WhatsApp Community for more updates and information:
+https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7
+
+We look forward to seeing you there!
 
 Warm regards,
 The Benue BlockchainAI Fest Team`;
@@ -91,6 +96,7 @@ The Benue BlockchainAI Fest Team`;
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
     .body h2 { color: #1a1a2e; }
+    .highlight-text { font-size: 16px; line-height: 1.6; color: #444; }
     .event-box { background: #f0f8ff; border-left: 4px solid #00d4ff; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
@@ -108,7 +114,9 @@ The Benue BlockchainAI Fest Team`;
 
     <div class="body">
       <h2>Hello ${user.firstName},</h2>
-      <p>Thank you for registering for the <strong>Benue BlockchainAI Fest</strong>! We're excited to have you join us.</p>
+      <p class="highlight-text">Thank you for registering for the <strong>Benue BlockchainAI Fest</strong>! We are spotlighting innovation to onboard the next billion.</p>
+      
+      <p class="highlight-text">Get ready for an inaugural 5-day celebration featuring <strong>700+ talented developers</strong> and <strong>20+ leading Web3 & AI companies</strong>. This is not just a conference, but a platform to bring your craziest ideas to life!</p>
 
       <div class="event-box">
         <p> <strong>Date:</strong> ${process.env.EVENT_DATE}</p>
@@ -128,7 +136,17 @@ The Benue BlockchainAI Fest Team`;
         </a>
       </div>
 
-      <p style="margin-top: 30px;">We look forward to seeing you there! 🚀</p>
+      <div style="margin-top: 24px; padding: 16px; background: #e8f5e9; border-left: 4px solid #25d366; border-radius: 4px;">
+        <p style="margin: 0; font-size: 15px; color: #1a1a2e;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20" style="vertical-align: middle; margin-right: 8px;" />
+          <strong style="vertical-align: middle;">Join our WhatsApp Community for more updates and information:</strong>
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; padding-left: 28px;">
+          <a href="https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7" target="_blank" style="color: #25d366; text-decoration: none; font-weight: bold;">Click here to join the group &rarr;</a>
+        </p>
+      </div>
+
+      <p style="margin-top: 30px; font-weight: bold;">We look forward to seeing you there! 🚀</p>
     </div>
     <div class="footer">
       <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
@@ -136,8 +154,6 @@ The Benue BlockchainAI Fest Team`;
   </div>
 </body>
 </html>
-
-
     `;
 
   try {
@@ -167,21 +183,28 @@ async function sendHackathonConfirmationEmail(registration, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const subject = 'Hackathon Registration Confirmed – Benue BlockchainAI Fest';
+  const subject = 'Dare to Build: Hackathon Registration Confirmed – Benue Fest';
   const text = `Hello ${registration.firstName},
 
-Your hackathon registration has been received! We're thrilled to have you competing in the Benue BlockchainAI Fest Hackathon.
+Your hackathon registration has been received! We're thrilled to have you join our flagship 'Dare to Build' 72-Hour non-stop innovation hackathon.
+
+Prepare to tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI alongside 700+ developers. 
+
+With live mentorship, robust support, and massive prize pools, this is your chance to build the future of Web3 and AI.
 
 Event Details:
 
 Date: ${process.env.EVENT_DATE}
 Venue: ${process.env.EVENT_VENUE}
 
-Follow us:
+Follow us for hackathon updates:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
 Facebook: ${process.env.SOCIAL_FACEBOOK}
 YouTube: ${process.env.SOCIAL_YOUTUBE}
+
+Join our WhatsApp Community for more updates and information:
+https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7
 
 Get ready to build, innovate, and win!
 
@@ -202,6 +225,7 @@ The Benue BlockchainAI Fest Team`;
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
     .body h2 { color: #1a1a2e; }
+    .highlight-text { font-size: 16px; line-height: 1.6; color: #444; }
     .event-box { background: #f0f8ff; border-left: 4px solid #00d4ff; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
@@ -214,12 +238,14 @@ The Benue BlockchainAI Fest Team`;
   <div class="container">
     <div class="header">
       ${logoHtml}
-      <h1 style="margin-top: 30px;">🚀 Hackathon Registration Confirmed!</h1>
+      <h1 style="margin-top: 30px;">🚀 Dare to Build: Hackathon Confirmed!</h1>
     </div>
 
     <div class="body">
       <h2>Hello ${registration.firstName},</h2>
-      <p>Your hackathon registration has been received! We're excited to have you build at the <strong>Benue BlockchainAI Fest Hackathon</strong>.</p>
+      <p class="highlight-text">Your hackathon registration has been received! We're thrilled to have you join our flagship <strong>'Dare to Build' 72-Hour Hackathon</strong>.</p>
+
+      <p class="highlight-text">Prepare to tackle real-world challenges in DeFi, ReFi, DePINs, RWA tokenisation, NFTs, DAOs, and decentralised AI alongside 700+ developers. With live mentorship and massive prize pools, this is your chance to shine!</p>
 
       <div class="event-box">
         <p> <strong>Date:</strong> ${process.env.EVENT_DATE}</p>
@@ -239,7 +265,17 @@ The Benue BlockchainAI Fest Team`;
         </a>
       </div>
 
-      <p style="margin-top: 30px;">Get ready to build, innovate, and win! 🏆</p>
+      <div style="margin-top: 24px; padding: 16px; background: #e8f5e9; border-left: 4px solid #25d366; border-radius: 4px;">
+        <p style="margin: 0; font-size: 15px; color: #1a1a2e;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20" style="vertical-align: middle; margin-right: 8px;" />
+          <strong style="vertical-align: middle;">Join our WhatsApp Community for more updates and information:</strong>
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; padding-left: 28px;">
+          <a href="https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7" target="_blank" style="color: #25d366; text-decoration: none; font-weight: bold;">Click here to join the group &rarr;</a>
+        </p>
+      </div>
+
+      <p style="margin-top: 30px; font-weight: bold;">Get ready to build, innovate, and win! 🏆</p>
     </div>
     <div class="footer">
       <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
@@ -247,8 +283,6 @@ The Benue BlockchainAI Fest Team`;
   </div>
 </body>
 </html>
-
-
     `;
 
   try {
@@ -277,21 +311,26 @@ async function sendProductShowcaseConfirmationEmail(registration, attempt = 1) {
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const subject = 'Product Showcase Registration Confirmed – Benue BlockchainAI Fest';
+  const subject = 'Showcase Your Innovation – Benue BlockchainAI Fest';
   const text = `Hello ${registration.firstName},
 
-Your product showcase registration has been received! We're excited to have you showcase your product at the Benue BlockchainAI Fest.
+Spotlighting innovation to onboard the next billion! Your product showcase registration has been received. 
+
+We're excited to have you present your product at the Benue BlockchainAI Fest. Prepare to discover cutting-edge partnerships, connect with 20+ leading Web3 companies, and explore Africa's most innovative ecosystem with 700+ attendees.
 
 Event Details:
 
 Date: ${process.env.EVENT_DATE}
 Venue: ${process.env.EVENT_VENUE}
 
-Follow us:
+Follow us for ecosystem updates:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
 Facebook: ${process.env.SOCIAL_FACEBOOK}
 YouTube: ${process.env.SOCIAL_YOUTUBE}
+
+Join our WhatsApp Community for more updates and information:
+https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7
 
 Get ready to showcase your innovation to the world!
 
@@ -312,6 +351,7 @@ The Benue BlockchainAI Fest Team`;
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
     .body h2 { color: #1a1a2e; }
+    .highlight-text { font-size: 16px; line-height: 1.6; color: #444; }
     .event-box { background: #f0f8ff; border-left: 4px solid #00d4ff; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
@@ -324,12 +364,14 @@ The Benue BlockchainAI Fest Team`;
   <div class="container">
     <div class="header">
       ${logoHtml}
-      <h1 style="margin-top: 30px;">🚀 Product Showcase Registration Confirmed!</h1>
+      <h1 style="margin-top: 30px;">🚀 Product Showcase Confirmed!</h1>
     </div>
 
     <div class="body">
       <h2>Hello ${registration.firstName},</h2>
-      <p>Your product showcase registration has been received! We're excited to have you present your product at the <strong>Benue BlockchainAI Fest</strong>.</p>
+      <p class="highlight-text"><strong>Spotlighting innovation to onboard the next billion!</strong> Your product showcase registration has been received.</p>
+
+      <p class="highlight-text">We're excited to have you present your product at the <strong>Benue BlockchainAI Fest</strong>. Connect with 20+ leading Web3 companies, investors, and explore Africa's most innovative ecosystem with 700+ attendees.</p>
 
       <div class="event-box">
         <p> <strong>Date:</strong> ${process.env.EVENT_DATE}</p>
@@ -349,7 +391,17 @@ The Benue BlockchainAI Fest Team`;
         </a>
       </div>
 
-      <p style="margin-top: 30px;">Get ready to showcase your innovation to the world! </p>
+      <div style="margin-top: 24px; padding: 16px; background: #e8f5e9; border-left: 4px solid #25d366; border-radius: 4px;">
+        <p style="margin: 0; font-size: 15px; color: #1a1a2e;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20" style="vertical-align: middle; margin-right: 8px;" />
+          <strong style="vertical-align: middle;">Join our WhatsApp Community for more updates and information:</strong>
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; padding-left: 28px;">
+          <a href="https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7" target="_blank" style="color: #25d366; text-decoration: none; font-weight: bold;">Click here to join the group &rarr;</a>
+        </p>
+      </div>
+
+      <p style="margin-top: 30px; font-weight: bold;">Get ready to showcase your innovation to the world! 🌍</p>
     </div>
     <div class="footer">
       <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
@@ -357,9 +409,6 @@ The Benue BlockchainAI Fest Team`;
   </div>
 </body>
 </html>
-
-
-
     `;
 
   try {
@@ -388,21 +437,26 @@ async function sendSpeakerApplicationConfirmationEmail(application, attempt = 1)
   const maxAttempts = 3;
   const retryDelayMs = 2000;
 
-  const subject = 'Speaker Application Received – Benue BlockchainAI Fest';
+  const subject = 'Lead the Conversation: Speaker Application Received – Benue Fest';
   const text = `Hello ${application.firstName},
 
 Thank you for your interest in speaking at the Benue BlockchainAI Fest! We have received your application and our team will be reviewing it shortly.
+
+As a speaker, you will have the unique platform to share your insights with 700+ developers, tech enthusiasts, and 20+ leading Web3 companies at our world-class 2-day summit.
 
 Event Details:
 
 Date: ${process.env.EVENT_DATE}
 Venue: ${process.env.EVENT_VENUE}
 
-Follow us for updates:
+Follow us for the latest announcements:
 
 Twitter: ${process.env.SOCIAL_TWITTER}
 Facebook: ${process.env.SOCIAL_FACEBOOK}
 YouTube: ${process.env.SOCIAL_YOUTUBE}
+
+Join our WhatsApp Community for more updates and information:
+https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7
 
 We appreciate your willingness to share your expertise with our community.
 
@@ -423,6 +477,7 @@ The Benue BlockchainAI Fest Team`;
     .header p { color: #aad4f5; margin: 8px 0 0; font-size: 14px; }
     .body { padding: 30px; color: #333333; }
     .body h2 { color: #1a1a2e; }
+    .highlight-text { font-size: 16px; line-height: 1.6; color: #444; }
     .event-box { background: #f0f8ff; border-left: 4px solid #00d4ff; padding: 16px 20px; border-radius: 4px; margin: 20px 0; }
     .event-box p { margin: 6px 0; font-size: 15px; }
     .social { margin-top: 24px; }
@@ -440,7 +495,9 @@ The Benue BlockchainAI Fest Team`;
 
     <div class="body">
       <h2>Hello ${application.firstName},</h2>
-      <p>Thank you for expressing interest in speaking at the <strong>Benue BlockchainAI Fest</strong>! Our team has received your application and will review it soon.</p>
+      <p class="highlight-text">Thank you for expressing interest in speaking at the <strong>Benue BlockchainAI Fest</strong>! Our team has received your application and will review it soon.</p>
+
+      <p class="highlight-text">As a speaker, you will have the unique platform to share your insights with <strong>700+ developers</strong>, tech enthusiasts, and <strong>20+ leading Web3 companies</strong> at our world-class 2-day summit.</p>
 
       <div class="event-box">
         <p> <strong>Date:</strong> ${process.env.EVENT_DATE}</p>
@@ -460,7 +517,17 @@ The Benue BlockchainAI Fest Team`;
         </a>
       </div>
 
-      <p style="margin-top: 30px;">We appreciate your willingness to share your knowledge with our community! ✨</p>
+      <div style="margin-top: 24px; padding: 16px; background: #e8f5e9; border-left: 4px solid #25d366; border-radius: 4px;">
+        <p style="margin: 0; font-size: 15px; color: #1a1a2e;">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20" style="vertical-align: middle; margin-right: 8px;" />
+          <strong style="vertical-align: middle;">Join our WhatsApp Community for more update information:</strong>
+        </p>
+        <p style="margin: 8px 0 0 0; font-size: 14px; padding-left: 28px;">
+          <a href="https://chat.whatsapp.com/K0RNdkd6FPJEAEKaHTHUQ7" target="_blank" style="color: #25d366; text-decoration: none; font-weight: bold;">Click here to join the group &rarr;</a>
+        </p>
+      </div>
+
+      <p style="margin-top: 30px; font-weight: bold;">We appreciate your willingness to share your knowledge with our community! ✨</p>
     </div>
     <div class="footer">
       <p>&copy; 2026 Benue BlockchainAI Fest. All rights reserved.</p>
@@ -468,9 +535,6 @@ The Benue BlockchainAI Fest Team`;
   </div>
 </body>
 </html>
-
-
-
     `;
 
   try {
