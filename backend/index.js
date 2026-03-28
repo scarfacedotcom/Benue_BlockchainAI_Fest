@@ -17,7 +17,7 @@ const speakerApplicationRoutes = require('./routes/speakerApplicationRoutes');
 const { globalLimiter } = require('./middleware/rateLimiter');
 
 const app = express();
-app.set('trust proxy', 1); // Allow express-rate-limit behind proxies like Render
+app.set('trust proxy', 1); 
 const PORT = process.env.PORT || 5000;
 
 
@@ -36,12 +36,10 @@ const allowedOrigins = [...new Set([...defaultOrigins, ...envOrigins])];
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // If there's no origin (e.g. server-to-server or Postman) or it's in our list, allow it
     if (!origin || allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
       callback(null, true);
     } else {
       console.error(`CORS Error: Blocked origin -> ${origin}`);
-      // Returning an error instead of false makes express-cors block the request completely
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -51,12 +49,18 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-// GLOBAL SECURITY MIDDLEWARE
 app.use(helmet());
+
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && req.headers['x-forwarded-proto'] !== 'https') {
+    return res.redirect(301, `https://${req.headers.host}${req.url}`);
+  }
+  next();
+});
+
 app.use(cors(corsOptions));
 app.use(globalLimiter);
 
-// REQUEST PARSING WITH SIZE LIMITS (PROTECTION AGAINST LARGE PAYLOAD ATTACKS)
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 
