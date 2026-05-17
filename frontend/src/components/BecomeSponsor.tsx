@@ -32,7 +32,7 @@ export default function BecomeSponsor() {
                                 className="w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-secondary border-2 border-secondary/10 hover:border-primary/50 hover:text-primary font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-lg"
                             >
                                 <FaWhatsapp className="text-2xl text-[#25D366]" />
-                                Join WhatsApp Group
+                                Join WhatsApp Group 
                             </a>
                         </div>
                     </div>
