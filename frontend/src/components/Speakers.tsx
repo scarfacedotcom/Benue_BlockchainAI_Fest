@@ -41,8 +41,8 @@ const speakers = [
     },
      {
         name: 'Prof. Stephen Shiaondo Akuma',
-        role: 'CEO/MD, @SACS Computers.',
-        company: 'Nigeeria',
+        role: 'CEO/MD, SACS Computers.',
+        company: 'Nigeria',
         photo: '/file_00000000c8e871f48ac005a6f8d8895a (1).png'
     },
     // {
