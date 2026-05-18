@@ -39,6 +39,12 @@ const speakers = [
         company: 'Blockfuse Labs',
         photo: '/scarface.jpeg'
     },
+     {
+        name: 'Prof. Stephen Shiaondo Akuma',
+        role: 'CEO/MD, @SACS Computers.',
+        company: 'Nigeeria',
+        photo: '/file_00000000c8e871f48ac005a6f8d8895a (1).png'
+    },
     // {
     //     name: 'Hon. Kwaghgba Amande',
     //     role: 'Hon. Commissioner for Communications, Innovation, and Digital Economy',
