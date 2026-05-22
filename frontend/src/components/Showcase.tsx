@@ -14,7 +14,7 @@ export default function Showcase() {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % STATS_DATA.length);
-        }, 1000);
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
@@ -42,8 +42,8 @@ export default function Showcase() {
                     </Reveal>
 
                     {/* RIGHT COLUMN: Minimal Borders for stats */}
-                    <Reveal delay={200}>
-                        <div className="w-full lg:min-w-100 grid grid-cols-1x sm:grid-cols-2 lg:grid-cols-1 gap-x-8 gap-y-12">
+                    <Reveal delay={300}>
+                        <div className="w-full lg:min-w-100 grid grid-cols-1x sm:grid-cols-2 lg:grid-cols-2 gap-x-8 gap-y-12">
 
                             {STATS_DATA.map((stat, i) => (
                                 <div 
