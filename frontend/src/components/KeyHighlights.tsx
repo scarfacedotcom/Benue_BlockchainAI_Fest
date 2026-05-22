@@ -69,7 +69,7 @@ export default function KeyHighlights() {
                         {highlights.map((card, i) => (
                             <div key={i} className="shrink-0 w-[280px] snap-start">
                                 <div className="bg-white border border-black/5 rounded-3xl p-8 h-[380px] flex flex-col justify-end relative overflow-hidden group shadow-sm">
-                                    <span className="absolute font-heading-top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
+                                    <span className="absolute font-heading -top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
                                         {card.id}
                                     </span>
                                     <h3 className="text-xl font-bold text-background mb-4 relative z-10 leading-tight">{card.title}</h3>
