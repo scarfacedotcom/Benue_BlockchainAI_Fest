@@ -19,9 +19,9 @@ export default function About() {
                     {/* TOP AREA: Large Headline */}
                     <Reveal>
                         <div className="max-w-4xl">
-                            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6 block">The Genesis</span>
+                            <span className="text-xs md:text-sm font-semibold tracking-widest text-red uppercase mb-6 block">The Genesis</span>
                             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-medium text-gray-900 leading-[1.1] tracking-tight">
-                                Spotlighting innovation to onboard the <span className="text-primary italic">next billion.</span>
+                                Spotlighting innovation to onboard the <span className="text-red font-heading">next billion.</span>
                             </h2>
                         </div>
                     </Reveal>

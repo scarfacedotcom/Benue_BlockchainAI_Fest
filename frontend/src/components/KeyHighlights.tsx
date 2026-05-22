@@ -19,8 +19,8 @@ export default function KeyHighlights() {
                 
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-                        <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Foundations</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-background leading-tight mb-8 tracking-tight">
+                        <span className="text-xs md:text-sm font-semibold tracking-widest text-red  uppercase mb-6">Foundations</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium font-heading text-background leading-tight mb-8 tracking-tight">
                         Key Highlights
                         </h2>
                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
@@ -45,7 +45,7 @@ export default function KeyHighlights() {
                                     ${i !== 0 ? '-ml-[150px] lg:-ml-[260px] xl:-ml-[330px]' : ''}
                                 `}
                             >
-                                <div className="absolute top-8 left-12 text-background/30 font-bold text-[120px] leading-none select-none group-hover:text-primary/10 transition-colors pointer-events-none">
+                                <div className="absolute font-heading top-8 left-12 text-background/30 font-bold text-[120px] leading-none select-none group-hover:text-primary/10 transition-colors pointer-events-none">
                                     {card.id}
                                 </div>
                                 <div className="h-full flex flex-col justify-end relative z-10">
@@ -69,7 +69,7 @@ export default function KeyHighlights() {
                         {highlights.map((card, i) => (
                             <div key={i} className="shrink-0 w-[280px] snap-start">
                                 <div className="bg-white border border-black/5 rounded-3xl p-8 h-[380px] flex flex-col justify-end relative overflow-hidden group shadow-sm">
-                                    <span className="absolute -top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
+                                    <span className="absolute font-heading-top-4 -left-4 text-background/30 font-black text-7xl leading-none select-none group-hover:text-primary/10 transition-colors">
                                         {card.id}
                                     </span>
                                     <h3 className="text-xl font-bold text-background mb-4 relative z-10 leading-tight">{card.title}</h3>

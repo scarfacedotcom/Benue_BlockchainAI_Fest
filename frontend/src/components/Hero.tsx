@@ -16,14 +16,14 @@ export default function Hero() {
                 <div className="w-full lg:w-[55%] flex flex-col relative">
                     <Reveal>
                         <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-5 py-2 w-fit mb-8 backdrop-blur-md">
-                            <span className="flex h-2.5 w-2.5 relative">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                            <span className="flex h-2 w-2 relative">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-100"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                             </span>
                             <span className="text-white text-xs md:text-sm font-medium tracking-wider text-center uppercase">Location TBA</span>
                         </div>
 
-                        <h1 className="text-5xl sm:text-6xl  lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">
+                        <h1 className="font-heading text-5xl sm:text-6xl lg:text-[75px] font-bold text-white leading-[1.05] tracking-tighter mb-8 max-w-2xl">
                             BLOCKCHAIN &<br />
                             <span className="text-transparent bg-clip-text bg-primary">AI UNLEASHED</span>
                         </h1>
@@ -37,7 +37,7 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row items-center gap-6">
                             <Link
                                 to="/register"
-                                className="w-full sm:w-auto bg-primary hover:bg-primary/90 font-medium text-lg py-4 px-10 text-center rounded-xl transition-all duration-300  hover:-translate-y-1"
+                                className="w-full sm:w-auto bg-white hover:text-white hover:bg-primary font-medium text-lg py-4 px-10 text-center rounded-xl transition-all duration-300  hover:-translate-y-1"
                             >
                                 Secure Your Ticket
                             </Link>
@@ -60,9 +60,9 @@ export default function Hero() {
                         <div className="relative w-full aspect-square max-w-125 mx-auto">
 
                             {/* Card 1: Back/Blurred */}
-                            <div className="absolute top-10 right-0 w-[70%] aspect-4/5 bg-background border border-white/10 rounded-3xl backdrop-blur-xl rotate-12 origin-bottom-left shadow-2xl p-6 flex flex-col justify-between transform transition-all hover:rotate-16 active:rotate-16 hover:-translate-y-2 active:-translate-y-2 duration-500 hover:z-30 active:z-30">
+                            <div className="absolute top-10 right-0 w-[70%] aspect-4/5 bg-secondary/70 border border-white/10 rounded-3xl backdrop-blur-xl rotate-12 origin-bottom-left shadow-2xl p-6 flex flex-col justify-between transform transition-all hover:rotate-16 active:rotate-16 hover:-translate-y-2 active:-translate-y-2 duration-500 hover:z-30 active:z-30">
                                 <div className="self-end w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                                    <span className="text-white font-bold opacity-80">03</span>
+                                    <span className="text-white font-heading opacity-80">03</span>
                                 </div>
                                 <div>
                                     <div className="text-white/60 font-mono text-sm mb-1">{' BLOCKCHAIN & AI EXPERTS'}</div>
@@ -71,9 +71,9 @@ export default function Hero() {
                             </div>
 
                             {/* Card 2: Middle/Accent */}
-                            <div className="absolute -left-4 top-20 w-[65%] aspect-square bg-linear-to-br from-primary/80 to-blue-500/80 rounded-3xl backdrop-blur-md -rotate-6 origin-bottom-right shadow-[0_20px_50px_rgba(56,189,248,0.3)] p-6 flex flex-col justify-between transform transition-all hover:-translate-y-4 active:-translate-y-4 hover:-rotate-12 active:-rotate-12 duration-500 z-10 hover:z-30 active:z-30">
+                            <div className="absolute -left-4 top-20 w-[65%] aspect-square bg-linear-to-br from-primary/80 to-primary/90 rounded-3xl backdrop-blur-md -rotate-6 origin-bottom-right shadow-primary shadow p-6 flex flex-col justify-between transform transition-all hover:-translate-y-4 active:-translate-y-4 hover:-rotate-12 active:-rotate-12 duration-500 z-10 hover:z-30 active:z-30">
                                 <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                    <span className="text-white font-bold">02</span>
+                                    <span className="text-white font-heading">02</span>
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-black text-white leading-tight mb-2">AI & Web3 Showcase</h3>
@@ -87,7 +87,7 @@ export default function Hero() {
                                     <div className="bg-secondary/5 text-secondary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                                         Build the Future
                                     </div>
-                                    <span className="text-primary text-4xl font-black opacity-20">01</span>
+                                    <span className="text-red text-4xl font-heading opacity-50">01</span>
                                 </div>
                                 <div>
                                     <h3 className="text-3xl font-black text-secondary  leading-none mb-6">72-Hour <br /> Hackathon</h3>
@@ -99,7 +99,7 @@ export default function Hero() {
 
                                     <Link
                                         to="/apply?type=hackathon"
-                                        className="w-full bg-background mt-4 hover:bg-background/90 text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 "
+                                        className="w-full bg-background border-secondary border  hover:border-primary hover:bg-primary hover:text-white mt-4  text-white font-medium py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 "
                                     >
                                         Enter Hackathon
                                         <FaArrowRight className="text-xs" />

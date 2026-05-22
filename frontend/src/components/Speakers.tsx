@@ -78,7 +78,7 @@ export default function Speakers() {
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                         <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">World-Class Insights</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-white leading-tight mb-8 tracking-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-white leading-tight mb-8 tracking-tight font-heading">
                             Meet Our Stakeholders
                         </h2>
                         <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light max-w-2xl">

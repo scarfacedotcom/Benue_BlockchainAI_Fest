@@ -89,7 +89,7 @@ const FAQ = () => {
                         <div className="mb-4 inline-block rounded-full  px-4 py-1.5 text-sm font-semibold tracking-wider text-primary uppercase">
                             Common Enquiries
                         </div>
-                        <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-6xl">
+                        <h2 className="mb-6 text-4xl font-bold tracking-tight font-heading text-white md:text-6xl">
                             Frequent <span className="">Questions</span>
                         </h2>
                         <p className="mx-auto max-w-2xl text-lg text-white/50 leading-relaxed font-light">

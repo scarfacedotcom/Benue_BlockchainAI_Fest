@@ -8,8 +8,8 @@ export default function BecomeSponsor() {
             <div className="container mx-auto px-4 max-w-7xl text-center">
                 <Reveal>
                     <div className="flex flex-col items-center">
-                        <span className="text-sm font-semibold tracking-widest text-primary uppercase mb-6">Partnership</span>
-                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
+                        <span className="text-sm font-semibold tracking-widest text-red  uppercase mb-6">Partnership</span>
+                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight font-heading">
                             Become a Sponsor
                         </h2>
                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-12 font-light max-w-2xl mx-auto">

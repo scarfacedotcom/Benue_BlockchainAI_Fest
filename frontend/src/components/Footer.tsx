@@ -56,15 +56,15 @@ export default function Footer() {
                         <h4 className="text-white font-semibold text-sm mb-5 uppercase tracking-wide">Contact</h4>
                         <div className="space-y-3 text-sm flex flex-col items-center md:items-start">
                             <a href="mailto:info@bbaifest.com" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
-                                <FaEnvelope className="text-primary/60 flex-shrink-0" />
+                                <FaEnvelope className="text-primary/60 shrink-0" />
                                 <span>partnerships@benueblockchainfest.com</span>
                             </a>
                             <a href="tel:+2348021192934" className="text-white/60 hover:text-primary transition-colors flex items-center gap-2">
-                                <FaPhone className="text-primary/60 flex-shrink-0" />
+                                <FaPhone className="text-primary/60 shrink-0" />
                                 <span>+234 802 119 2934</span>
                             </a>
                             <div className="text-white/60 flex items-center gap-2">
-                                <FaLocationDot className="text-primary/60 flex-shrink-0" />
+                                <FaLocationDot className="text-primary/60 shrink-0" />
                                 <span className="text-xs">Fr. Alia Conference<br />Makurdi, Benue</span>
                             </div>
                         </div>

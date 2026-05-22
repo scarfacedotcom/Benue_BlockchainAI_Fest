@@ -28,13 +28,13 @@ export default function EventStructure() {
         
             <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-8xl relative z-10">
 
-
+z
 
                 <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl relative z-10">
                     <Reveal>
                         <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-                            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Foundations</span>
-                            <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-white leading-tight mb-8 tracking-tight">
+                            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary  uppercase mb-6">Foundations</span>
+                            <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium font-heading text-white leading-tight mb-8 tracking-tight">
                             Event Structure
                             </h2    >
                             <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
@@ -77,7 +77,7 @@ export default function EventStructure() {
                                             <ul className="flex flex-col gap-4">
                                                 {event.highlights.map((item, idx) => (
                                                     <li key={idx} className="flex items-center gap-4 text-white/90 font-light text-base md:text-lg">
-                                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0"></div>
+                                                        <div className="w-1.5 h-1.5 rounded-full bg-primary/70 shrink-0"></div>
                                                         {item}
                                                     </li>
                                                 ))}

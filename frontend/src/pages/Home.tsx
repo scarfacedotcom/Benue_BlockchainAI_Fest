@@ -13,6 +13,8 @@ import FAQ from '../components/FAQ'
 import BecomeSponsor from '../components/BecomeSponsor'
 import Speakers from '../components/Speakers'
 import GovernmentPartners from '../components/GovernmentPartners'
+import Merch from '../components/Merch'
+
 
 export default function Home() {
     return (
@@ -31,6 +33,7 @@ export default function Home() {
                 <GovernmentPartners />
                 <CommunityPartners />
                 <BecomeSponsor />
+                <Merch />
                 <FAQ />
             </main>
             <Footer />

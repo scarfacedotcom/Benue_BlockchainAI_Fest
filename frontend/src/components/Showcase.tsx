@@ -27,9 +27,9 @@ export default function Showcase() {
 
                     {/* LEFT COLUMN: Clean, minimalist typography */}
                     <Reveal>
-                        <div className="flex flex-col items-start lg:max-w-xl">
-                            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">The Experience</span>
-                            <h2 className="text-[40px] md:text-5xl lg:text-[56px] font-medium text-gray-900 leading-[1.1] mb-8 tracking-tight">
+                        <div className="flex flex-col items-start lg:max-w-3xl">
+                            <span className="text-xs md:text-sm font-semibold tracking-widest text-red  uppercase mb-6">The Experience</span>
+                            <h2 className="text-[40px] md:text-5xl lg:text-[56px] font-medium font-heading text-gray-900 leading-[1.1] mb-8 tracking-tight">
                                 Products Showcase <br className="hidden md:block" /> & Hackathon
                             </h2>
                             <p className="text-gray-500 text-lg md:text-xl leading-[1.8] font-light">
@@ -43,7 +43,7 @@ export default function Showcase() {
 
                     {/* RIGHT COLUMN: Minimal Borders for stats */}
                     <Reveal delay={200}>
-                        <div className="w-full lg:min-w-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-8 gap-y-12">
+                        <div className="w-full lg:min-w-100 grid grid-cols-1x sm:grid-cols-2 lg:grid-cols-1 gap-x-8 gap-y-12">
 
                             {STATS_DATA.map((stat, i) => (
                                 <div 
