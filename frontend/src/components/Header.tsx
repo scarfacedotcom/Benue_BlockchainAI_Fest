@@ -60,7 +60,7 @@ export default function Header() {
                         </Link>
                         <Link
                             to="/register"
-                            className="relative group overflow-hidden bg-primary/10 border border-primary text-primary font-bold py-2.5 px-7 rounded-full text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]"
+                            className="relative group overflow-hidden bg-primary/10 border border-primary text-primary font-bold py-2.5 px-7 rounded-full text-sm transition-all duration-300 "
                         >
                             <span className="relative z-10 group-hover:text-secondary transition-colors duration-300">Register</span>
                             <div className="absolute inset-0 h-full w-full bg-primary scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100 mix-blend-normal"></div>

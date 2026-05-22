@@ -298,13 +298,13 @@ export default function Apply() {
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-4xl relative z-10">
                     <Reveal>
-                        <Link to="/" className="inline-flex items-center gap-2 text-primary font-medium pt-12 hover:text-secondary transition-colors mb-12 group">
+                        <Link to="/" className="inline-flex items-center gap-2 text-red font-medium pt-12 hover:text-secondary transition-colors mb-12 group">
                             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Home
                         </Link>
 
                         <div className="text-center mb-16">
                             <h1 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                                Welcome. <br className="hidden sm:block" /> <span className="text-gray-400 italic font-light">Join the movement.</span>
+                                Welcome. <br className="hidden sm:block" /> <span className="text-gray-400 italic font-heading">Join the movement.</span>
                             </h1>
                             <p className="text-gray-500 text-lg md:text-xl font-light max-w-2xl mx-auto leading-[1.8]">
                                 Whether you're building, showcasing, or speaking, join the ecosystem at Benue Fest TBA.

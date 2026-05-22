@@ -332,13 +332,13 @@ export default function Register() {
 
                 <div className="container mx-auto px-4 sm:px-6 lg:px-12 w-full max-w-3xl relative z-10">
                     <Reveal>
-                        <Link to="/" className="inline-flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors pt-12 mb-12 group">
+                        <Link to="/" className="inline-flex items-center gap-2 text-red font-medium hover:text-secondary transition-colors pt-12 mb-12 group">
                             <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" /> Back to Home
                         </Link>
 
                         <div className="text-center mb-16">
                             <h1 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-gray-900 mb-6 tracking-tight leading-[1.1]">
-                                Secure Your <span className="text-primary italic font-light">Spot.</span>
+                                Secure Your <span className="text-gray-400 font-heading">Spot.</span>
                             </h1>
                             <p className="text-gray-500 text-lg md:text-xl font-light max-w-xl mx-auto leading-[1.8]">
                                 Join hundreds of builders, innovators, and creators at the Benue Fest TBA.

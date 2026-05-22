@@ -28,8 +28,8 @@ export default function GovernmentPartners() {
             <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl relative z-10">
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-                        <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Official Support</span>
-                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-gray-900 leading-tight mb-8 tracking-tight">
+                        <span className="text-xs md:text-sm font-semibold tracking-widest text-red  uppercase mb-6">Official Support</span>
+                        <h2 className="text-4xl md:text-5xl lg:text-[54px] font-medium text-gray-900 leading-tight mb-8 tracking-tight font-heading">
                             Backed By
                         </h2>
                         <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-light max-w-2xl">

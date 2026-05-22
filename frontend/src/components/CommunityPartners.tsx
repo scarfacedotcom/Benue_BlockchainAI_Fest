@@ -17,8 +17,8 @@ export default function CommunityPartners() {
             <div className="container mx-auto px-4 sm:px-6 w-full max-w-8xl">
                 <Reveal>
                     <div className="flex flex-col items-center text-center mb-16">
-                        <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6">Our Network</span>
-                        <h2 className="text-[32px] md:text-5xl font-medium text-gray-900 leading-tight mb-8 tracking-tight">
+                        <span className="text-xs md:text-sm font-semibold tracking-widest text-red  uppercase mb-6">Our Network</span>
+                        <h2 className="text-[32px] md:text-5xl font-medium text-gray-900 leading-tight mb-8 tracking-tight font-heading">
                             Community Partners
                         </h2>
                         <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
@@ -63,7 +63,7 @@ export default function CommunityPartners() {
                                 href="https://forms.gle/WyhMvcbfyfuUhHLq5"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto bg-primary hover:bg-white text-secondary font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1 text-center"
+                                className="w-full sm:w-auto bg-white hover:bg-primary hover:text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-xl hover:shadow-lg transform hover:-translate-y-1 text-center"
                             >
                                 Partner with Us
                             </a>

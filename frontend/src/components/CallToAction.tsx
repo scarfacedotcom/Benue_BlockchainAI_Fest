@@ -9,8 +9,8 @@ export default function CallToAction() {
                 {/* HEADER SECTION */}
                 <Reveal>
                     <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
-                        <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-6 block">Get Involved</span>
-                        <h2 className="text-[40px] md:text-5xl lg:text-[56px] font-medium text-gray-900 leading-[1.1] mb-6 tracking-tight">
+                        <span className="text-xs md:text-sm font-semibold tracking-widest text-red  uppercase mb-6 block">Get Involved</span>
+                        <h2 className="text-[40px] md:text-5xl lg:text-[56px] font-medium text-gray-900 leading-[1.1] mb-6 tracking-tight font-heading">
                             Take the Stage.
                         </h2>
                         <p className="text-gray-500 text-lg md:text-xl leading-[1.8] font-light">
@@ -42,7 +42,7 @@ export default function CallToAction() {
                                 <div>
                                     <Link
                                         to="/apply?type=showcase"
-                                        className="inline-block bg-white text-secondary border border-secondary hover:bg-secondary hover:text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300 w-full sm:w-auto text-center"
+                                        className="inline-block bg-white text-red border border-red hover:border-secondary hover:bg-secondary hover:text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300 w-full sm:w-auto text-center"
 
                                     >
                                         Submit Showcase App
@@ -72,7 +72,7 @@ export default function CallToAction() {
                                 <div>
                                     <Link
                                         to="/apply?type=speaker"
-                                        className="inline-block bg-white text-secondary border border-secondary hover:bg-secondary hover:text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300 w-full sm:w-auto text-center"
+                                        className="inline-block bg-white text-red border border-red hover:bg-secondary hover:text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300 w-full sm:w-auto text-center"
                                     >
                                         Apply for Speaking Slot
                                     </Link>
