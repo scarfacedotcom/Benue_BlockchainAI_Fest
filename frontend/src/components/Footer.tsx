@@ -20,7 +20,7 @@ export default function Footer() {
                     
                     {/* BRAND SECTION */}
                     <div className="col-span-1 lg:col-span-2 flex flex-col items-center md:items-start">
-                        <img src="/logo3.png" alt="Logo" className="w-20 h-16 mb-6" />
+                        <img src="/logo.png" alt="Logo" className="w-20 h-16 mb-6" />
                         <p className="text-white/70 text-sm leading-relaxed">
                             The inaugural Benue Blockchain AI Fest—building the next billion users through Web3 and AI innovation.
                         </p>
