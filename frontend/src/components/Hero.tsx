@@ -61,8 +61,9 @@ export default function Hero() {
 
                             {/* Card 1: Back/Blurred */}
                             <div className="absolute top-10 right-0 w-[70%] aspect-4/5 bg-secondary/70 border border-white/10 rounded-3xl backdrop-blur-xl rotate-12 origin-bottom-left shadow-2xl p-6 flex flex-col justify-between transform transition-all hover:rotate-16 active:rotate-16 hover:-translate-y-2 active:-translate-y-2 duration-500 hover:z-30 active:z-30">
-                                <div className="self-end w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
-                                    <span className="text-white font-heading opacity-80">03</span>
+                                <div className="self-end w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span className="text-white text-4xl font-heading opacity-90">03</span>
+                                    
                                 </div>
                                 <div>
                                     <div className="text-white/60 font-mono text-sm mb-1">{' BLOCKCHAIN & AI EXPERTS'}</div>
@@ -72,8 +73,8 @@ export default function Hero() {
 
                             {/* Card 2: Middle/Accent */}
                             <div className="absolute -left-4 top-20 w-[65%] aspect-square bg-linear-to-br from-primary/80 to-primary/90 rounded-3xl backdrop-blur-md -rotate-6 origin-bottom-right shadow-primary shadow p-6 flex flex-col justify-between transform transition-all hover:-translate-y-4 active:-translate-y-4 hover:-rotate-12 active:-rotate-12 duration-500 z-10 hover:z-30 active:z-30">
-                                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                    <span className="text-white font-heading">02</span>
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span className="text-white text-4xl font-heading opacity-90">02</span>
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-black text-white leading-tight mb-2">AI & Web3 Showcase</h3>
@@ -87,7 +88,7 @@ export default function Hero() {
                                     <div className="bg-secondary/5 text-secondary px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                                         Build the Future
                                     </div>
-                                    <span className="text-red text-4xl font-heading opacity-50">01</span>
+                                    <span className="text-red text-4xl font-heading opacity-90">01</span>
                                 </div>
                                 <div>
                                     <h3 className="text-3xl font-black text-secondary  leading-none mb-6">72-Hour <br /> Hackathon</h3>
