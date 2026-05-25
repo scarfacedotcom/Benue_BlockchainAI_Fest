@@ -190,12 +190,11 @@ const productShowcaseSchema = Joi.object({
   email: baseEmailField('Email'),
   productLink: Joi.string()
     .trim()
-    .uri({ scheme: ['https'] })
     .max(500)
     .optional()
     .allow('', null)
     .messages({
-      'string.uri': 'Please enter a valid HTTPS URL (e.g., https://myproduct.com)',
+      'string.max': 'Product link must not exceed 500 characters',
     }),
   projectDescription: descriptionField('Project description', 10, 2000),
 });

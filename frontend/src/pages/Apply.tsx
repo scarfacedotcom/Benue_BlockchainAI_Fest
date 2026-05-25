@@ -78,7 +78,6 @@ export default function Apply() {
             case 'productLink': {
                 const v = value as string
                 if (applyType === 'showcase' && !v.trim()) return 'Product link is required'
-                if (v && !v.startsWith('http')) return 'Please enter a valid URL starting with http:// or https://'
                 return undefined
             }
             case 'linkedinLink': {
@@ -166,10 +165,7 @@ export default function Apply() {
             newErrors.githubPortfolio = 'Please enter a valid URL starting with http:// or https://'
             isValid = false
         }
-        if (formData.productLink && !formData.productLink.startsWith('http')) {
-            newErrors.productLink = 'Please enter a valid URL starting with http:// or https://'
-            isValid = false
-        }
+
         if (formData.linkedinLink && !formData.linkedinLink.startsWith('http')) {
             newErrors.linkedinLink = 'Please enter a valid URL starting with http:// or https://'
             isValid = false
@@ -431,7 +427,7 @@ export default function Apply() {
                                                 name="productLink" 
                                                 value={formData.productLink} 
                                                 onChange={handleInputChange} 
-                                                type="url" 
+                                                type="text" 
                                                 className={`w-full bg-gray-50 border ${errors.productLink ? 'border-red-400 focus:border-red-500 focus:ring-red-500' : 'border-gray-200 focus:border-primary focus:ring-primary'} rounded-xl px-5 py-4 focus:outline-none focus:ring-1 transition-all text-gray-900`} 
                                                 placeholder="https://myproduct.com" 
                                             />

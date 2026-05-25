@@ -34,7 +34,7 @@ export default function Header() {
                 <div className="flex items-center justify-between px-10 py-3 relative z-10">
                     {/* LOGO */}
                     <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex flex-col group relative z-50 shrink-0">
-                        <img src="/logo.png" alt="Logo" className="w-24 h-16" />
+                        <img src="/logo.png" alt="Logo" className="w-18 h-10" />
                     </Link>
 
                     {/* DESKTOP NAV (PILL SHAPE) */}
