@@ -131,7 +131,6 @@ export default function AdminLogin() {
                                 placeholder="Enter admin email..."
                             />
                             {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
-                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: admin@benueblockchainfest.com</p>
                         </div>
 
                         <div className="mb-10">
