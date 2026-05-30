@@ -148,7 +148,6 @@ export default function AdminLogin() {
                                 placeholder="Enter password..."
                             />
                             {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password}</p>}
-                            <p className="text-xs text-gray-400 mt-2 font-light">Hint: Look###Admin@</p>
                         </div>
 
                         <button
