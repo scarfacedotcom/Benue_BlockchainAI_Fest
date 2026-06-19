@@ -34,7 +34,7 @@ export default function Merch() {
                     <div className="flex gap-6 animate-marquee pause-on-hover w-max">
                         {[...items, ...items].map((item, i) => (
                             <div key={i} className="shrink-0 w-72 md:w-96">
-                                <div className="bg-gray-50 rounded-3xl p-4 md:p-6 flex items-center justify-center aspect-square">
+                                <div className=" rounded-3xl p-4 md:p-6 flex items-center justify-center aspect-square">
                                     <img
                                         src={item.src}
                                         alt={item.alt}
