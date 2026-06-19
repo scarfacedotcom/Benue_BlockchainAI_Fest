@@ -125,7 +125,7 @@ async function adminLogin(req, res) {
   }
 }
 
-module.exports = { 
+module.exports = {
   register,
-  adminLogin 
+  adminLogin
 };

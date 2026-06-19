@@ -4,7 +4,6 @@ const { registrationLimiter, adminLoginLimiter } = require('../middleware/rateLi
 
 const router = express.Router();
 
-
 router.post('/register', registrationLimiter, register);
 router.post('/admin-login', adminLoginLimiter, adminLogin);
 
