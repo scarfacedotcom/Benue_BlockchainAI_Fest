@@ -1,17 +1,17 @@
 import Reveal from './Reveal'
 
 const items = [
-    { src: '/shirt1.png', alt: 'Official Fest T-Shirt Design 1' },
-    { src: '/shirt2.png', alt: 'Official Fest T-Shirt Design 2' },
-    { src: '/Blue tee 1.png', alt: 'Blue T-Shirt' },
-    { src: '/green tee 1.png', alt: 'Green T-Shirt' },
-    { src: '/white tee.png', alt: 'White T-Shirt' },
-    { src: '/hoodie 1.png', alt: 'Hoodie Design 1' },
-    { src: '/hoodie 2.png', alt: 'Hoodie Design 2' },
-    { src: '/Lanyard_Mockup_1.png', alt: 'Lanyard' },
-    { src: '/Lanyard_Mockup_2.png', alt: 'Lanyard' },
-    { src: '/bracelets.png', alt: 'Bracelets' },
-    { src: '/tote bag.png', alt: 'Tote Bag' },
+    { src: '/shirt1.webp', alt: 'Official Fest T-Shirt Design 1' },
+    { src: '/shirt2.webp', alt: 'Official Fest T-Shirt Design 2' },
+    { src: '/Blue tee 1.webp', alt: 'Blue T-Shirt' },
+    { src: '/green tee 1.webp', alt: 'Green T-Shirt' },
+    { src: '/white tee.webp', alt: 'White T-Shirt' },
+    { src: '/hoodie 1.webp', alt: 'Hoodie Design 1' },
+    { src: '/hoodie 2.webp', alt: 'Hoodie Design 2' },
+    { src: '/Lanyard_Mockup_1.webp', alt: 'Lanyard' },
+    { src: '/Lanyard_Mockup_2.webp', alt: 'Lanyard' },
+    { src: '/bracelets.webp', alt: 'Bracelets' },
+    { src: '/tote bag.webp', alt: 'Tote Bag' },
 ]
 
 export default function Merch() {
@@ -39,6 +39,8 @@ export default function Merch() {
                                         src={item.src}
                                         alt={item.alt}
                                         className="object-contain w-full h-full"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </div>
