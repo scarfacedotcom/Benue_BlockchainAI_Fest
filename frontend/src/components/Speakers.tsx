@@ -6,44 +6,43 @@ const speakers = [
         name: 'Rev. Fr. Dr. Hyacinth Iormem Alia',
         role: 'Executive Governor',
         company: 'Benue State',
-        photo: '/Governor Hyacinth Alia .jpg'
+        photo: '/governor-hyacinth-alia.webp'
     },
-        {
+    {
         name: 'Barr. Dr. Sam Ode',
         role: 'Deputy Governor',
         company: 'Benue State',
-        photo: '/Deputy Gov Dr Sam Ode.jpg.jpeg'
+        photo: '/deputy-gov-sam-ode.webp'
     },
     {
         name: 'Hon. James Dwem',
         role: 'Commissioner of Science and Technology',
         company: 'Benue State',
-        photo: '/Hon. James Dwem.jpeg'
+        photo: '/hon-james-dwem.webp'
     },
     {
         name: 'Mr. Leo-Angelo Viashima',
         role: 'Director General',
         company: 'DG, BICD',
-        photo: '/Mr. Leo-Angelo Viashima.jpeg'
+        photo: '/mr-leo-angelo-viashima.webp'
     },
-
     {
         name: 'Barr. Ori Adam-Onum',
         role: 'Legal & Compliance',
         company: 'Benue Blockchain AI Fest',
-        photo: '/Barr. Ori Adam-Onum.jpeg'
+        photo: '/barr-ori-adam-onum.webp'
     },
     {
         name: 'Adaaku Peter Sesugh',
         role: 'Co-founder/CEO Blockfuse Labs',
         company: 'Blockfuse Labs',
-        photo: '/scarface.jpeg'
+        photo: '/scarface.webp'
     },
-     {
+    {
         name: 'Prof. Stephen Shiaondo Akuma',
         role: 'CEO/MD, SACS Computers.',
         company: 'Nigeria',
-        photo: '/file_00000000c8e871f48ac005a6f8d8895a (1).png'
+        photo: '/prof-stephen-akuma.webp'
     },
     // {
     //     name: 'Hon. Kwaghgba Amande',
@@ -55,7 +54,7 @@ const speakers = [
         name: 'Hon. Terwase Gbande-Hembaor',
         role: 'Director General/CEO',
         company: 'Benue Digital Infrastructure Company',
-        photo: '/Hon. Terwase Gbande-Hembaor.jpeg'
+        photo: '/hon-terwase-gbande-hembaor.webp'
     }
 ];
 
@@ -94,7 +93,7 @@ export default function Speakers() {
                                 {/* IMAGE OR PLACEHOLDER */}
                                 <div className="aspect-4/5 sm:aspect-3/4 bg-white/5 relative flex items-center justify-center overflow-hidden">
                                     {speaker.photo ? (
-                                        <img src={speaker.photo} alt={speaker.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                                        <img src={speaker.photo} alt={speaker.name} className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
                                     ) : (
                                         <div className="relative z-20 w-16 h-16 border-2 border-white/20 rounded-full flex items-center justify-center transition-colors duration-500">
                                             <div className="w-10 h-10 bg-white/10 rounded-full animate-pulse"></div>
