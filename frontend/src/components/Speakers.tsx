@@ -27,6 +27,18 @@ const speakers = [
         photo: '/mr-leo-angelo-viashima.webp'
     },
     {
+        name: 'Dr. Clement Tyav',
+        role: 'Principal Special Assistant to the Governor on AI and Innovations',
+        company: 'Benue State',
+        photo: '/Dr. Clement Tyav.jpeg'
+    },
+    {
+        name: 'Hon. Solomon Terkimbi Adagba',
+        role: 'Director General',
+        company: 'Benue Information Technology Development Agency (BITDA)',
+        photo: '/Hon. Solomon Terkimbi Adagba..jpeg'
+    },
+    {
         name: 'Barr. Ori Adam-Onum',
         role: 'Legal & Compliance',
         company: 'Benue Blockchain AI Fest',
