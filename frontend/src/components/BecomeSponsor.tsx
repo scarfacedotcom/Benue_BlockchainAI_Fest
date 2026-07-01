@@ -6,7 +6,7 @@ export default function BecomeSponsor() {
     return (
         <section id="sponsor" className="pb-20 bg-white ">
             <div className="container mx-auto px-4 max-w-7xl text-center">
-                <Reveal>
+                <Reveal> 
                     <div className="flex flex-col items-center">
                         <span className="text-sm font-semibold tracking-widest text-red  uppercase mb-6">Partnership</span>
                         <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight font-heading">
