@@ -1,10 +1,38 @@
-const { User } = require('../models');
+const { User, HackathonRegistration, ProductShowcase, SpeakerApplication } = require('../models');
+
+
+async function getStats(req, res) {
+  try {
+    const [totalRegistrations, hackathonCount, showcaseCount, speakerCount] = await Promise.all([
+      User.count(),
+      HackathonRegistration.count(),
+      ProductShowcase ? ProductShowcase.count() : Promise.resolve(0),
+      SpeakerApplication.count(),
+    ]);
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        totalRegistrations,
+        hackathonCount,
+        showcaseCount,
+        speakerCount,
+      },
+    });
+  } catch (err) {
+    console.error('[AdminController] getStats error:', err);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch stats.',
+    });
+  }
+}
 
 
 async function getAllUsers(req, res) {
   try {
     const page = Math.max(1, parseInt(req.query.page) || 1);
-    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 10));
+    const limit = Math.min(500, Math.max(1, parseInt(req.query.limit) || 100));
     const offset = (page - 1) * limit;
 
     const { count, rows: users } = await User.findAndCountAll({
@@ -37,7 +65,6 @@ async function getAllUsers(req, res) {
     });
   }
 }
-
 
 
 async function getUserById(req, res) {
@@ -93,8 +120,9 @@ async function deleteUser(req, res) {
   }
 }
 
-module.exports = { 
+module.exports = {
+  getStats,
   getAllUsers,
   getUserById,
-  deleteUser 
+  deleteUser,
 };

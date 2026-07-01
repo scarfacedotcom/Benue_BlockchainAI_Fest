@@ -59,7 +59,7 @@ async function hackathonRegister(req, res) {
 async function getAllHackathonRegistrations(req, res) {
   try {
     const page = Math.max(1, parseInt(req.query.page) || 1);
-    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 10));
+    const limit = Math.min(500, Math.max(1, parseInt(req.query.limit) || 100));
     const offset = (page - 1) * limit;
 
     const { count, rows: registrations } = await HackathonRegistration.findAndCountAll({
